@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 
 const SuccessPrioritySection = () => {
-  const scrollContainerRef = useRef(null);
+  const scrollContainer1Ref = useRef(null);
+  const scrollContainer2Ref = useRef(null);
 
   const sectionData = {
     title: "Your success is our priority",
@@ -55,51 +56,112 @@ const SuccessPrioritySection = () => {
     },
   ];
 
-  // Duplicate testimonials for seamless loop
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  // Split testimonials into two columns
+  const column1 = testimonials.filter((_, index) => index % 2 === 0);
+  const column2 = testimonials.filter((_, index) => index % 2 === 1);
+
+  // Duplicate for seamless loop
+  const duplicatedColumn1 = [...column1, ...column1, ...column1];
+  const duplicatedColumn2 = [...column2, ...column2, ...column2];
 
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
+    const scrollContainer1 = scrollContainer1Ref.current;
+    const scrollContainer2 = scrollContainer2Ref.current;
+    if (!scrollContainer1 || !scrollContainer2) return;
 
-    let scrollInterval;
-    let isPaused = false;
+    let scrollInterval1, scrollInterval2;
+    let isPaused1 = false;
+    let isPaused2 = false;
 
-    const startScrolling = () => {
-      scrollInterval = setInterval(() => {
-        if (!isPaused && scrollContainer) {
-          scrollContainer.scrollTop += 1;
+    // Initialize column 2 to start from bottom
+    scrollContainer2.scrollTop = scrollContainer2.scrollHeight / 3;
 
-          // Reset to top when reached halfway (seamless loop)
-          if (scrollContainer.scrollTop >= scrollContainer.scrollHeight / 2) {
-            scrollContainer.scrollTop = 0;
+    // Column 1: Scroll down (top to bottom)
+    const startScrolling1 = () => {
+      scrollInterval1 = setInterval(() => {
+        if (!isPaused1 && scrollContainer1) {
+          scrollContainer1.scrollTop += 1;
+
+          // Reset when reached 2/3 point
+          if (
+            scrollContainer1.scrollTop >=
+            (scrollContainer1.scrollHeight * 2) / 3
+          ) {
+            scrollContainer1.scrollTop = scrollContainer1.scrollHeight / 3;
           }
         }
       }, 30);
     };
 
-    startScrolling();
+    // Column 2: Scroll up (bottom to top)
+    const startScrolling2 = () => {
+      scrollInterval2 = setInterval(() => {
+        if (!isPaused2 && scrollContainer2) {
+          scrollContainer2.scrollTop -= 1;
 
-    // Pause on hover
-    const handleMouseEnter = () => {
-      isPaused = true;
+          // Reset when reached top
+          if (scrollContainer2.scrollTop <= 0) {
+            scrollContainer2.scrollTop = scrollContainer2.scrollHeight / 3;
+          }
+        }
+      }, 30);
     };
 
-    const handleMouseLeave = () => {
-      isPaused = false;
+    startScrolling1();
+    startScrolling2();
+
+    // Pause handlers for column 1
+    const handleMouseEnter1 = () => {
+      isPaused1 = true;
+    };
+    const handleMouseLeave1 = () => {
+      isPaused1 = false;
     };
 
-    scrollContainer.addEventListener("mouseenter", handleMouseEnter);
-    scrollContainer.addEventListener("mouseleave", handleMouseLeave);
+    // Pause handlers for column 2
+    const handleMouseEnter2 = () => {
+      isPaused2 = true;
+    };
+    const handleMouseLeave2 = () => {
+      isPaused2 = false;
+    };
+
+    scrollContainer1.addEventListener("mouseenter", handleMouseEnter1);
+    scrollContainer1.addEventListener("mouseleave", handleMouseLeave1);
+    scrollContainer2.addEventListener("mouseenter", handleMouseEnter2);
+    scrollContainer2.addEventListener("mouseleave", handleMouseLeave2);
 
     return () => {
-      clearInterval(scrollInterval);
-      if (scrollContainer) {
-        scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
-        scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
+      clearInterval(scrollInterval1);
+      clearInterval(scrollInterval2);
+      if (scrollContainer1) {
+        scrollContainer1.removeEventListener("mouseenter", handleMouseEnter1);
+        scrollContainer1.removeEventListener("mouseleave", handleMouseLeave1);
+      }
+      if (scrollContainer2) {
+        scrollContainer2.removeEventListener("mouseenter", handleMouseEnter2);
+        scrollContainer2.removeEventListener("mouseleave", handleMouseLeave2);
       }
     };
   }, []);
+
+  const TestimonialCard = ({ testimonial }) => (
+    <div className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-red-500 mb-4">
+      {testimonial.name && (
+        <div className="flex items-center gap-3 mb-3 pb-3 border-b border-gray-200">
+          <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center text-white font-bold">
+            {testimonial.avatar || testimonial.name.charAt(0).toUpperCase()}
+          </div>
+          <p className="font-semibold text-gray-800 text-sm">
+            {testimonial.name}
+          </p>
+        </div>
+      )}
+      <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+        {testimonial.text}
+      </p>
+    </div>
+  );
 
   return (
     <div className="bg-gradient-to-br from-[#4a0e0e] via-[#2d0a0a] to-[#1a0505] py-12 md:py-16 px-4 sm:px-6 lg:px-8">
@@ -128,55 +190,40 @@ const SuccessPrioritySection = () => {
             </div>
           </div>
 
-          {/* Right Section - Auto-Scrolling Testimonials */}
+          {/* Right Section - Dual Direction Scrolling Testimonials */}
           <div className="relative overflow-hidden">
-            <div
-              ref={scrollContainerRef}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[600px] overflow-hidden"
-              style={{ scrollBehavior: "auto" }}
-            >
-              {duplicatedTestimonials.map((testimonial, index) => (
-                <div
-                  key={`${testimonial.id}-${index}`}
-                  className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-red-500"
-                >
-                  {testimonial.name && (
-                    <div className="flex items-center gap-3 mb-3 pb-3 border-b border-gray-200">
-                      <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center text-white font-bold">
-                        {testimonial.avatar ||
-                          testimonial.name.charAt(0).toUpperCase()}
-                      </div>
-                      <p className="font-semibold text-gray-800 text-sm">
-                        {testimonial.name}
-                      </p>
-                    </div>
-                  )}
-                  <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
-                    {testimonial.text}
-                  </p>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Column 1: Scrolls Down (Top to Bottom) */}
+              <div
+                ref={scrollContainer1Ref}
+                className="max-h-[600px] overflow-hidden"
+                style={{ scrollBehavior: "auto" }}
+              >
+                {duplicatedColumn1.map((testimonial, index) => (
+                  <TestimonialCard
+                    key={`col1-${testimonial.id}-${index}`}
+                    testimonial={testimonial}
+                  />
+                ))}
+              </div>
+
+              {/* Column 2: Scrolls Up (Bottom to Top) */}
+              <div
+                ref={scrollContainer2Ref}
+                className="max-h-[600px] overflow-hidden"
+                style={{ scrollBehavior: "auto" }}
+              >
+                {duplicatedColumn2.map((testimonial, index) => (
+                  <TestimonialCard
+                    key={`col2-${testimonial.id}-${index}`}
+                    testimonial={testimonial}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #ef4444;
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #dc2626;
-        }
-      `}</style>
     </div>
   );
 };

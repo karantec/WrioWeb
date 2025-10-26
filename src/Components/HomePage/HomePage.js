@@ -8,22 +8,27 @@ const ZolvitHeroSection = () => {
   const [searchText, setSearchText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
 
+  // Replace this with your actual Cloudinary image URL
+  const backgroundImageUrl =
+    "https://res.cloudinary.com/de4ks8mkh/image/upload/v1761474873/Copilot_20251026_154726_qdkxev.png";
+
   const heroData = {
-    rating: "4.5/5 (19k+ Reviews)",
-    mainTitle: "Build Your Business with Passion.",
-    subTitle: "Run It Smarter with Zolvit.",
-    description1: "Simplifying Legal, Tax, and Compliance, the",
+    rating: "4.5/5 (10k+ Reviews)",
+    mainTitle: "Turn Your Vision into a Brand.",
+    subTitle: "Scale It Smarter with Cube Multimedia.",
+    description1: "Simplifying Marketing, Branding, and Growth, the",
     highlight: "AI-Driven",
-    description2: "Way. Trusted by millions.",
-    description3: "Backed by real experts.",
-    searchPlaceholder: "Try GST Registration",
+    description2: "way. Eastern India's leading agency,",
+    description3: "backed by experts who deliver results.",
+    searchPlaceholder: "Try Social Media Management",
   };
 
   const typingPhrases = [
-    "GST Registration",
-    "Company Registration",
-    "Trademark Registration",
-    "Legal Consultation",
+    "Social Media Management",
+    "Facebook Ads",
+    "Google Ads",
+    "Podcast Marketing",
+    "Video Editing",
   ];
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -139,35 +144,35 @@ const ZolvitHeroSection = () => {
   ];
 
   const quickActions = [
-    "Trademark Registration",
-    "GST Registration",
-    "Company Registration",
-    "Lawyer Consultation",
+    "Facebook Ads",
+    "Google Ads",
+    "Podcast Marketing",
+    "Video Editing",
   ];
 
   const businessCards = [
     {
       id: 1,
-      title: "Start Your Business",
+      title: "Digital Marketing ▸",
       description:
-        "Launch your business effortlessly with expert-guided incorporation, registrations, and licensing.",
-      icon: "https://vakilsearch.com/_next/image?url=https%3A%2F%2Fassets.vakilsearch.com%2Fic-start-business.png&w=128&q=75",
+        "Data-driven campaigns and social media strategies that grow your brand.",
+      icon: "https://assets.vakilsearch.com/ic-start-business-services-zpf.png",
       rotation: "-8deg",
     },
     {
       id: 2,
-      title: "Manage Your Business",
+      title: "Influencer Marketing ▸",
       description:
-        "Stay compliant and in control with automated tax filings, smart dashboards, and real-time alerts.",
-      icon: "https://assets.vakilsearch.com/ic-manage-business-zpf.svg",
+        "Partner with the right talents to boost engagement and credibility.",
+      icon: "https://assets.vakilsearch.com/ic-manage-business-services-zpf.png",
       rotation: "0deg",
     },
     {
       id: 3,
-      title: "Protect Your Business",
+      title: "Content Creation ▸",
       description:
-        "Secure your brand with trademark registration, contracts, and legal support from trusted experts.",
-      icon: "https://assets.vakilsearch.com/ic-protect-business-zpf.svg",
+        "Creative visuals and compelling stories for your brand story.",
+      icon: "https://assets.vakilsearch.com/ic-protect-business-services-zpf.png",
       rotation: "6deg",
     },
   ];
@@ -195,9 +200,25 @@ const ZolvitHeroSection = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#4a0e0e] via-[#2d0a0a] to-[#1a0505] overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Background Image Layer */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${backgroundImageUrl})`,
+          backgroundSize: "100% 100%",
+          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
+          minHeight: "100vh",
+          width: "100%",
+        }}
+      ></div>
+
+      {/* Overlay for better contrast */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60"></div>
+
       {/* Header */}
-      <header className="relative z-20 bg-[#191919] ">
+      <header className="relative z-20 bg-[#191919]/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -404,7 +425,7 @@ const ZolvitHeroSection = () => {
           <p className="text-gray-300 text-sm sm:text-base md:text-lg">
             {heroData.description1}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10 bg-white text-gray-900 px-3 py-1 rounded-full font-semibold text-xs sm:text-sm">
+              <span className="relative z-10 bg-red-500 text-white px-3 py-1 rounded-full font-semibold text-1xl shadow-[0_0_20px_rgba(239,68,68,0.6),0_0_40px_rgba(239,68,68,0.4)]">
                 {heroData.highlight}
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 rounded-full blur-sm opacity-75 animate-pulse"></span>
@@ -457,14 +478,15 @@ const ZolvitHeroSection = () => {
         </div>
 
         {/* Business Cards with Tilt */}
-        <div className="relative w-full flex flex-col md:flex-row justify-center items-center md:items-end gap-2 md:gap-8 lg:gap-2 mt-10 md:mt-20 px-4">
+
+        <div className="relative w-full flex flex-col md:flex-row justify-center items-center md:items-end gap-6 md:gap-8 lg:gap-6 mt-10 md:mt-20 px-4">
           {businessCards.map((card, index) => (
             <div
               key={card.id}
               onClick={() =>
                 setClickedCard(clickedCard === card.id ? null : card.id)
               }
-              className={`bg-white rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-500 hover:scale-105 hover:shadow-red-500/30 cursor-pointer w-full sm:w-[450px] md:w-[480px] lg:w-[460px] min-h-[360px]`}
+              className={`bg-white rounded-2xl shadow-2xl p-8 sm:p-10 flex flex-col justify-between transition-all duration-500 hover:scale-105 hover:shadow-red-500/30 cursor-pointer w-full sm:w-[500px] md:w-[580px] lg:w-[680px] xl:w-[750px] min-h-[420px]`}
               style={{
                 transform:
                   clickedCard === card.id
@@ -474,13 +496,13 @@ const ZolvitHeroSection = () => {
               }}
             >
               <div>
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                <div className="flex items-start justify-between mb-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {card.title}
                   </h3>
-                  <span className="text-2xl">▸</span>
+                  <span className="text-3xl">▸</span>
                 </div>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
                   {card.description}
                 </p>
               </div>
@@ -488,16 +510,15 @@ const ZolvitHeroSection = () => {
                 <img
                   src={card.icon}
                   alt={card.title}
-                  className="w-16 h-16 object-contain opacity-80"
+                  className="w-20 h-20 object-contain opacity-80"
                 />
               </div>
             </div>
           ))}
         </div>
       </div>
-
       {/* Wave & Bottom Section */}
-      <div className="relative -mt-32 sm:-mt-48">
+      <div className="relative -mt-32 sm:-mt-48 z-10">
         <svg
           className="w-full h-24 absolute bottom-0 left-0 right-0"
           viewBox="0 0 1440 120"
@@ -508,7 +529,7 @@ const ZolvitHeroSection = () => {
           <path d="M0 0C480 120 960 120 1440 0V120H0V0Z" fill="#000000" />
         </svg>
 
-        <div className="bg-black pt-24 pb-12 relative z-10">
+        <div className="bg-black pt-24 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-12">
               {/* Testimonial with Avatar */}
@@ -536,7 +557,8 @@ const ZolvitHeroSection = () => {
                 <img
                   src="https://assets.vakilsearch.com/ic-zolvit-reviews-light-zpf.svg"
                   alt="Zolvit Reviews"
-                  className="w-48 sm:w-64 mx-auto"
+                  className="w-72 sm:w-80 md:w-96
+"
                 />
               </div>
 
@@ -561,7 +583,7 @@ const ZolvitHeroSection = () => {
           </div>
 
           {/* Partner Logos Marquee */}
-          <div className="w-full bg-gray-800 py-6 overflow-hidden">
+          <div className="w-full bg-[#1a1a1a] py-12 overflow-hidden">
             <div className="flex gap-12 animate-marquee items-center">
               {[...partners, ...partners].map((partner, index) => (
                 <div key={index} className="flex-shrink-0">
