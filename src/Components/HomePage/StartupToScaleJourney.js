@@ -2,39 +2,63 @@ import React from "react";
 
 const StartupToScaleUp = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50">
-      <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
-        {/* MAIN HEADING */}
-        <div className="text-center mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-            From Startup to Scale-Up
-          </h1>
-          <p className="text-lg sm:text-xl text-red-600 font-semibold">
-            We Power Your Growth
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-red-100 via-red-50 to-rose-100">
+      <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 relative">
+        {/* Vertical timeline image spanning all three sections */}
+        <div
+          className="absolute -left-4 top-72 hidden lg:block z-20"
+          style={{ height: "calc(100% - 30rem)" }}
+        >
+          <img
+            src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761551803/cubemedia/Screenshot_2025-10-27_132624_gnkkep.png"
+            alt="Timeline"
+            className="h-full w-auto object-fill"
+            style={{ minHeight: "2500px" }}
+          />
         </div>
 
-        {/* 1️⃣ START YOUR BUSINESS */}
-        <section className="mb-14 mt-20">
+        {/* MAIN HEADING */}
+        <div className="text-center mb-16 relative z-10">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+            From Content Creation to Performance Marketing,
+            <br />
+            Cube Manages It All
+            <br />
+            <p className="text-lg sm:text-xl text-black font-medium  max-w-full">
+              All your brand needs under one roof-creative,social and growth
+              strategies delivered seamlessly.
+            </p>
+          </h1>
+        </div>
+
+        {/* 1️⃣ CONTENT CREATION */}
+        <section className="mb-14 mt-20 relative z-10">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-red-600">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 flex items-center">
               <span className="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
                 1
               </span>
-              Start Your Business
+              Content Creation
             </h2>
 
             <div className="grid md:grid-cols-2 gap-10 mb-10">
               <div>
                 <ul className="space-y-3">
                   {[
-                    "Private Limited Company",
-                    "Limited Liability Partnership",
-                    "One Person Company",
-                    "Sole Proprietorship",
-                    "Partnership Firm",
-                    "Nidhi Company",
-                    "Section 8 Company",
+                    "Scriptwriting & Storyboarding",
+
+                    "Video Production & Shooting",
+
+                    "Photography & Cinematic Captures",
+
+                    "Video Editing & Post Production",
+
+                    "Graphic Design & Visual Assets",
+
+                    "Motion Graphics & Animation",
+                    "Reels & Short-form Video Creation",
+
+                    "Brand-focused Creative Campaigns",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -61,7 +85,7 @@ const StartupToScaleUp = () => {
               <div className="flex justify-center items-start">
                 <div className="relative -mb-64 z-10">
                   <img
-                    src="https://assets.vakilsearch.com/ic-start-business-services-zpf.png"
+                    src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544106/cubemedia/Script_Final_Draft_Locked_bkedbm.png"
                     alt="Start your business"
                     className="rounded-xl shadow-lg w-full sm:w-auto max-w-sm object-contain pt-16 bg-white"
                   />
@@ -111,26 +135,32 @@ const StartupToScaleUp = () => {
         </section>
 
         {/* 2️⃣ OPERATE WITH CLARITY */}
-        <section className="mb-14 mt-20">
+        <section className="mb-14 mt-20 relative z-10">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-red-600">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 flex items-center">
               <span className="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
                 2
               </span>
-              Operate with Clarity
+              Social Media Management
             </h2>
 
             <div className="grid md:grid-cols-2 gap-10 mb-10">
               <div>
                 <ul className="space-y-3">
                   {[
-                    "GST Registration",
-                    "Change Company Address",
-                    "Director Replacement",
-                    "Mandatory Annual Filing",
-                    "Labour Compliance",
-                    "Shop and Establishment License",
-                    "Accounting & Tax",
+                    "Facebook, Instagram, YouTube, LinkedIn, Twitter",
+
+                    "Follower Growth & Engagement Boost",
+
+                    "Increasing Views & Audience Reach",
+
+                    "Daily Posting on All Channels",
+
+                    "Creative Storytelling & Content Strategy",
+
+                    "Trend-based Campaigns & Hashtag Strategy",
+
+                    "Community Engagement & Moderation",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -157,7 +187,7 @@ const StartupToScaleUp = () => {
               <div className="flex justify-center items-start">
                 <div className="relative -mb-64 z-10">
                   <img
-                    src="https://assets.vakilsearch.com/ic-manage-business-services-zpf.png"
+                    src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544106/cubemedia/Your_Ads_are_LIVE_now_li9t0z.png"
                     alt="Operate with clarity"
                     className="rounded-xl shadow-lg w-full sm:w-auto max-w-sm object-contain p-2 bg-white"
                   />
@@ -203,26 +233,32 @@ const StartupToScaleUp = () => {
         </section>
 
         {/* 3️⃣ SCALE UP WITH STRATEGY */}
-        <section className="mb-20">
+        <section className="mb-20 relative z-10">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-red-600">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 flex items-center">
               <span className="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
                 3
               </span>
-              Scale Up with Strategy
+              Performance Marketing
             </h2>
 
             <div className="grid md:grid-cols-2 gap-10 mb-10">
               <div>
                 <ul className="space-y-3">
                   {[
-                    "Trademark Registration",
-                    "Patent Filing",
-                    "MSME & ISO Certification",
-                    "Data Protection Advisory",
-                    "Tax Planning",
-                    "Legal Consultancy",
-                    "Startup Valuation",
+                    "Meta Ads & Google Ads Campaigns",
+
+                    "Dedicated & Proven Sales Funnels",
+
+                    "High ROI Growth Strategies",
+
+                    "Retargeting & Lead Nurturing",
+
+                    "Conversion Rate Optimization",
+
+                    "Audience Segmentation & AI Targeting",
+
+                    "Budget-efficient Paid Campaigns",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -249,7 +285,7 @@ const StartupToScaleUp = () => {
               <div className="flex justify-center items-start">
                 <div className="relative -mb-64 z-10">
                   <img
-                    src="https://assets.vakilsearch.com/ic-protect-business-services-zpf.png"
+                    src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544106/cubemedia/Upload_Done_on_All_Social_Media_Handles_s73wbp.png"
                     alt="Scale up with strategy"
                     className="rounded-xl shadow-lg w-full sm:w-auto max-w-sm object-contain p-2 bg-white"
                   />
@@ -296,16 +332,22 @@ const StartupToScaleUp = () => {
         </section>
 
         {/* 🔢 The Numbers Behind the Journey */}
-        <section className="bg-gradient-to-r from-red-600 to-rose-600 rounded-2xl shadow-2xl p-10 text-white">
+        <section
+          className="bg-gradient-to-r from-red-600 to-rose-600 rounded-2xl p-10 text-white relative z-10 border-4 border-red-700"
+          style={{
+            boxShadow:
+              "0 20px 50px rgba(220, 38, 38, 0.5), 0 10px 25px rgba(220, 38, 38, 0.3)",
+          }}
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
-            The Numbers Behind the Journey
+            Cube Multimedia's Journey So Far
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "350+", label: "Startups" },
-              { number: "500+", label: "Projects" },
-              { number: "5 Lakh+", label: "Clients" },
-              { number: "1 Lakh+", label: "Registrations" },
+              { number: "100+", label: "Happy Clients" },
+              { number: "5CR+", label: "Revenue Generated for Clients" },
+              { number: "25+", label: "Cities Served" },
+              { number: "500+", label: "Projects Delivered" },
             ].map((item, index) => (
               <div key={index}>
                 <h3 className="text-4xl sm:text-5xl font-bold mb-2">

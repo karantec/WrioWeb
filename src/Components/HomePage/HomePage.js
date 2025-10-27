@@ -157,7 +157,7 @@ const ZolvitHeroSection = () => {
       description:
         "Data-driven campaigns and social media strategies that grow your brand.",
       icon: "https://assets.vakilsearch.com/ic-start-business-services-zpf.png",
-      rotation: "-8deg",
+      rotation: "-5deg",
     },
     {
       id: 2,
@@ -173,19 +173,17 @@ const ZolvitHeroSection = () => {
       description:
         "Creative visuals and compelling stories for your brand story.",
       icon: "https://assets.vakilsearch.com/ic-protect-business-services-zpf.png",
-      rotation: "6deg",
+      rotation: "5deg",
     },
   ];
-
   const testimonial = {
-    quote: '"Registration, Filing, and Legal help in one app just makes sense"',
-    author: "Sanjivani Awale",
-    platform: "Google",
+    quote: "All Your Marketing Needs in One Place. Cube Makes It Easy.",
+    author: "Trusted by 100+ Clients",
+    platform: "",
     avatar:
       "https://assets.vakilsearch.com/live-images/user-avatar-placeholder.svg",
     link: "#",
   };
-
   const googleReview = {
     rating: "4.5/5",
     totalReviews: "19k+ Happy Reviews",
@@ -478,8 +476,7 @@ const ZolvitHeroSection = () => {
         </div>
 
         {/* Business Cards with Tilt */}
-
-        <div className="relative w-full flex flex-col md:flex-row justify-center items-center md:items-end gap-6 md:gap-8 lg:gap-6 mt-10 md:mt-20 px-4">
+        <div className="relative w-full flex flex-col md:flex-row justify-center items-center md:items-end gap-4 md:gap-8 lg:gap-4 mt-10 md:mt-20 px-4">
           {businessCards.map((card, index) => (
             <div
               key={card.id}
@@ -506,11 +503,13 @@ const ZolvitHeroSection = () => {
                   {card.description}
                 </p>
               </div>
-              <div className="flex justify-end">
+
+              {/* Bigger Image */}
+              <div className="flex justify-center items-center">
                 <img
                   src={card.icon}
                   alt={card.title}
-                  className="w-20 h-20 object-contain opacity-80"
+                  className="w-96 h-96 sm:w-40 sm:h-40 md:w-40 md:h-40 object-contain opacity-90 transition-all duration-300"
                 />
               </div>
             </div>
@@ -519,37 +518,25 @@ const ZolvitHeroSection = () => {
       </div>
       {/* Wave & Bottom Section */}
       <div className="relative -mt-32 sm:-mt-48 z-10">
-        <svg
-          className="w-full h-24 absolute bottom-0 left-0 right-0"
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
+        <div
+          className="bg-black pt-24 pb-12 relative overflow-hidden"
+          style={{
+            borderTopLeftRadius: "50% 60px",
+            borderTopRightRadius: "50% 60px",
+          }}
         >
-          <path d="M0 0C480 120 960 120 1440 0V120H0V0Z" fill="#000000" />
-        </svg>
-
-        <div className="bg-black pt-24 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-12">
               {/* Testimonial with Avatar */}
               <div className="text-white text-center md:text-left">
                 <div className="flex items-center gap-3 mb-3 justify-center md:justify-start">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white font-bold">
-                    SA
-                  </div>
                   <div className="text-left">
-                    <p className="text-sm font-semibold">
+                    <p className="text-md font-semibold">{testimonial.quote}</p>
+                    <p className="text-md font-semibold mt-3">
                       {testimonial.author}
-                    </p>
-                    <p className="text-xs text-gray-400">
-                      on {testimonial.platform}
                     </p>
                   </div>
                 </div>
-                <p className="text-sm sm:text-base italic">
-                  {testimonial.quote}
-                </p>
               </div>
 
               {/* Award */}
@@ -557,26 +544,39 @@ const ZolvitHeroSection = () => {
                 <img
                   src="https://assets.vakilsearch.com/ic-zolvit-reviews-light-zpf.svg"
                   alt="Zolvit Reviews"
-                  className="w-72 sm:w-80 md:w-96
-"
+                  className="w-72 sm:w-80 md:w-96"
                 />
               </div>
 
               {/* Google Reviews */}
-              <div className="flex items-center justify-center md:justify-end gap-4">
-                <div className="text-white text-center md:text-right">
+              <div className="flex items-center justify-center md:justify-end bg-black p-4 rounded-lg">
+                <div className="flex items-center gap-3 text-white">
+                  {/* Google "G" Logo */}
                   <img
-                    src="https://assets.vakilsearch.com/googleimg-white.svg"
+                    src="https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0"
                     alt="Google"
-                    className="inline-block w-12 sm:w-16 mb-1"
+                    className="w-8 sm:w-10"
                   />
-                  <div className="flex items-center justify-center md:justify-end gap-2 text-sm sm:text-base">
-                    <span className="text-yellow-400">★★★★★</span>
-                    <span className="font-bold">{googleReview.rating}</span>
+
+                  {/* Review Text */}
+                  <div className="text-left">
+                    <p className="font-medium text-sm sm:text-base">
+                      Google Reviews
+                    </p>
+
+                    {/* Stars and Rating */}
+                    <div className="flex items-center text-yellow-400 text-base sm:text-lg">
+                      <span>★★★★★</span>
+                      <span className="text-white font-semibold ml-2">
+                        4.5/5
+                      </span>
+                    </div>
+
+                    {/* Review Count */}
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      19k+ Happy Reviews
+                    </p>
                   </div>
-                  <p className="text-xs sm:text-sm text-gray-400">
-                    {googleReview.totalReviews}
-                  </p>
                 </div>
               </div>
             </div>

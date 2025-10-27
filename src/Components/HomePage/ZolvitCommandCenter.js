@@ -18,7 +18,7 @@ const HassleFreeProjectSection = () => {
       description:
         "Get a detailed, customized proposal outlining project scope, timeline, and deliverables.",
       image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+        "https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544106/cubemedia/Receive_Official_Proposal_a39puu.png",
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const HassleFreeProjectSection = () => {
       description:
         "Quick and efficient onboarding to get your project started without delays.",
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+        "https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544102/cubemedia/4-5_Days_Onboarding_Period_naeccf.png",
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const HassleFreeProjectSection = () => {
       description: "Your point of contact for all updates",
       highlighted: true,
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop",
+        "https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544105/cubemedia/Dedicated_Account_Manager_hjf48q.png",
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ const HassleFreeProjectSection = () => {
       description:
         "Stay connected with your team through a dedicated communication channel for seamless collaboration.",
       image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+        "https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544106/cubemedia/Internal_Communication_Group_sx2de0.png",
     },
   ];
 

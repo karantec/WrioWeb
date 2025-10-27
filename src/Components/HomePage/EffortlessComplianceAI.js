@@ -47,7 +47,7 @@ export default function SmartIdeasSection() {
               </div>
               <div className="flex justify-center mt-4">
                 <img
-                  src="https://vakilsearch.com/_next/image?url=https%3A%2F%2Fassets.vakilsearch.com%2Fic-zen-search.png&w=640&q=75"
+                  src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544103/cubemedia/AI_name_rlnnec.svg"
                   alt="Business Name Generator"
                   className="w-64 md:w-80 rounded-xl shadow-lg"
                 />
@@ -82,7 +82,7 @@ export default function SmartIdeasSection() {
               </div>
               <div className="flex justify-center mt-4">
                 <img
-                  src="https://vakilsearch.com/_next/image?url=https%3A%2F%2Fassets.vakilsearch.com%2Fic-zen-doc.png&w=640&q=75"
+                  src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544102/cubemedia/AI_Document_brqbn8.webp"
                   alt="Document Generator"
                   className="w-64 md:w-80 rounded-xl shadow-lg"
                 />
@@ -93,9 +93,14 @@ export default function SmartIdeasSection() {
           {/* Right Side - Cube AI */}
           <div className="bg-gradient-to-br from-red-900 to-red-950 rounded-2xl shadow-md p-8 flex flex-col items-center justify-center relative overflow-hidden border-2 border-red-700">
             {/* Cube AI Badge */}
-            <div className="inline-flex items-center gap-2 bg-white border-2 border-red-300 rounded-full px-5 py-2 shadow-md mb-6 relative z-20">
+            <img
+              src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761544103/cubemedia/AI_Line_jr8op2.webp"
+              alt="AI Line Background"
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
+            />
+            <div className="inline-flex items-center gap-2 bg-white border-2 border-red-300 rounded-lg px-5 py-2 shadow-md mb-96 relative z-20">
               <Sparkles className="w-5 h-5 text-red-500" />
-              <span className="font-bold text-gray-800 text-lg">Cube Ai</span>
+              <span className="font-bold text-gray-800 text-2xl ">Cube Ai</span>
             </div>
 
             {/* Falling Messages */}
