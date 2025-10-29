@@ -9,6 +9,8 @@ import {
   Zap,
   Target,
 } from "lucide-react";
+import TestimonialCarousel from "./Testimonial";
+import MarketingLandingPage from "./TopDesign";
 
 export default function PersonalWebsiteDevelopment() {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,6 +22,7 @@ export default function PersonalWebsiteDevelopment() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-red-50">
+      <MarketingLandingPage />
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -192,7 +195,7 @@ export default function PersonalWebsiteDevelopment() {
           </div>
         </div>
       </div>
-
+      <TestimonialCarousel />
       {/* Trust Badges */}
       <div className="relative py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -254,7 +257,6 @@ export default function PersonalWebsiteDevelopment() {
           </div>
         </div>
       </div>
-
       {/* Overview Section */}
       <div className="py-20 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6">
@@ -277,7 +279,6 @@ export default function PersonalWebsiteDevelopment() {
           </p>
         </div>
       </div>
-
       {/* Process Section */}
       <div className="py-20 bg-gradient-to-br from-red-50 via-white to-rose-50 relative">
         <div className="max-w-5xl mx-auto px-6">
@@ -355,7 +356,6 @@ export default function PersonalWebsiteDevelopment() {
           </div>
         </div>
       </div>
-
       {/* Features Grid */}
       <div className="py-20 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
@@ -428,7 +428,6 @@ export default function PersonalWebsiteDevelopment() {
           </div>
         </div>
       </div>
-
       {/* Statistics */}
       <div className="py-20 bg-gradient-to-br from-red-600 via-red-700 to-rose-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
@@ -457,7 +456,6 @@ export default function PersonalWebsiteDevelopment() {
           </div>
         </div>
       </div>
-
       {/* Case Study */}
       <div className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-5xl mx-auto px-6">
@@ -506,7 +504,6 @@ export default function PersonalWebsiteDevelopment() {
           </div>
         </div>
       </div>
-
       {/* FAQs */}
       <div className="py-20 bg-gradient-to-br from-white to-red-50">
         <div className="max-w-4xl mx-auto px-6">
@@ -562,7 +559,6 @@ export default function PersonalWebsiteDevelopment() {
           </div>
         </div>
       </div>
-
       {/* CTA Section */}
       <div className="relative py-24 bg-gradient-to-br from-red-600 via-red-700 to-rose-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
@@ -587,7 +583,6 @@ export default function PersonalWebsiteDevelopment() {
           </button>
         </div>
       </div>
-
       <style>{`
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(20px); }
