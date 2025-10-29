@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 const ZolvitHeroSection = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [hoveredCategory, setHoveredCategory] = useState(0);
   const [clickedCard, setClickedCard] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -61,84 +60,67 @@ const ZolvitHeroSection = () => {
 
   const menuItems = [
     {
-      label: "Content Creation",
-      categories: [
-        {
-          title: "Graphic Design",
-          items: [
-            "Logo Design",
-            "Music Video Poster",
-            "Music Video Branding",
-            "Movie Poster",
-          ],
-        },
-        {
-          title: "Video Editing",
-          items: [
-            "Music Video Editing",
-            "Short Form Content",
-            "Long Form Content",
-            "Color Grading",
-          ],
-        },
-        {
-          title: "Content Creation Subscription",
-          items: [
-            "Monthly Design Package",
-            "Weekly Video Package",
-            "Social Media Bundle",
-            "Complete Creator Suite",
-          ],
-        },
-      ],
-    },
-    {
       label: "Digital Marketing",
-      categories: [
-        {
-          title: "Social Media Starter Subscription",
-          items: [
-            "GST Registration",
-            "GST Filing",
-            "HSN Code Finder",
-            "GST Cancellation and Revocation",
-            "GST Cancellation",
-          ],
-        },
-
-        {
-          title: "Social Media Growth Subscription",
-          items: [
-            "Change in Partners",
-            "Change in LLP Agreement",
-            "Change in Contribution",
-          ],
-        },
-        {
-          title: "Meta Ads Subscription",
-          items: [
-            "Annual Return Filing",
-            "Income Tax Return",
-            "TDS Return Filing",
-          ],
-        },
-        {
-          title: "YouTube Growth SubscriptionNew",
-          items: [
-            "PF Registration",
-            "ESI Registration",
-            "Professional Tax Registration",
-          ],
-        },
+      icon: "🟥",
+      items: [
+        "Social Media Management",
+        "Performance Marketing (Meta & Google Ads)",
+        "Influencer Marketing",
+        "WhatsApp API Marketing",
+        "Google My Business Optimization",
+        "SEO (On-page & Local)",
+        "Email Marketing",
+        "Marketing Automation",
       ],
     },
     {
-      label: "Web Designing",
-      categories: [
-        {
-          title: "Web Designing",
-          items: ["Personal Website", "Company Website", "E-Commerce Website"],
-        },
+      label: "Content Creation",
+      icon: "🎬",
+      items: [
+        "Reels Production",
+        "Social Media Content Creation",
+        "Photography & Videography",
+        "Video Editing",
+        "Graphic Design",
+        "Scriptwriting & Storyboarding",
+        "Voiceover & Dubbing",
+        "Brand Films / Ad Films",
+      ],
+    },
+    {
+      label: "Web Design & IT",
+      icon: "💻",
+      items: [
+        "Personal Website",
+        "Business / Corporate Website",
+        "E-Commerce Website",
+        "Mobile Application (iOS & Android)",
+        "Landing Page / Funnel Design",
+        "Website Maintenance & Security",
+      ],
+    },
+    {
+      label: "Publicity & PR",
+      icon: "📰",
+      items: [
+        "Personal Branding",
+        "Media News & PR Coverage",
+        "Podcast Production & Marketing",
+        "Film / Event Publicity",
+        "Wikipedia / ORM (Online Reputation Management)",
+      ],
+    },
+    {
+      label: "Others",
+      icon: "⚙️",
+      items: [
+        "Marketing Consultancy",
+        "Sales Consultancy",
+        "AI Tools Integration",
+        "Training & Workshops",
+        "Live Classes / Webinars",
+        "Free Learning Videos",
+        "Downloadable Resources (PDFs, Templates)",
       ],
     },
   ];
@@ -176,6 +158,7 @@ const ZolvitHeroSection = () => {
       rotation: "5deg",
     },
   ];
+
   const testimonial = {
     quote: "All Your Marketing Needs in One Place. Cube Makes It Easy.",
     author: "Trusted by 100+ Clients",
@@ -184,6 +167,7 @@ const ZolvitHeroSection = () => {
       "https://assets.vakilsearch.com/live-images/user-avatar-placeholder.svg",
     link: "#",
   };
+
   const googleReview = {
     rating: "4.5/5",
     totalReviews: "19k+ Happy Reviews",
@@ -216,7 +200,7 @@ const ZolvitHeroSection = () => {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60"></div>
 
       {/* Header */}
-      <header className="relative z-20 bg-[#191919]/80 backdrop-blur-sm">
+      <header className="relative z-20  bg-[#191919]/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -231,24 +215,19 @@ const ZolvitHeroSection = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
               {/* Consult Expert Button */}
-              <button className="px-4 py-2 bg-[#ffc107] hover:bg-[#ffcd38] text-gray-900 font-semibold rounded text-sm mr-2 transition-colors">
+              {/* <button className="px-4 py-2 bg-[#ffc107] hover:bg-[#ffcd38] text-gray-900 font-semibold rounded text-sm mr-2 transition-colors">
                 Consult an Expert ▾
-              </button>
+              </button> */}
 
               {menuItems.map((menu, index) => (
                 <div
                   key={index}
                   className="relative"
-                  onMouseEnter={() => {
-                    setActiveDropdown(index);
-                    setHoveredCategory(0);
-                  }}
-                  onMouseLeave={() => {
-                    setActiveDropdown(null);
-                    setHoveredCategory(0);
-                  }}
+                  onMouseEnter={() => setActiveDropdown(index)}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button className="px-3 py-2 text-white hover:text-[#ffc107] text-sm flex items-center gap-1 transition-colors">
+                    <span className="mr-1">{menu.icon}</span>
                     {menu.label}
                     <svg
                       className="w-4 h-4"
@@ -265,74 +244,23 @@ const ZolvitHeroSection = () => {
                     </svg>
                   </button>
                   {activeDropdown === index && (
-                    <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl z-50 w-[600px]">
-                      <div className="flex">
-                        {/* Left Column - Categories */}
-                        <div className="w-1/2 border-r border-gray-200 p-4">
-                          {menu.categories.map((category, catIndex) => (
-                            <button
-                              key={catIndex}
-                              onMouseEnter={() => setHoveredCategory(catIndex)}
-                              className={`w-full flex items-center justify-between py-3 px-3 hover:bg-gray-50 rounded-lg transition-colors group text-left ${
-                                hoveredCategory === catIndex ? "bg-gray-50" : ""
-                              }`}
+                    <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl z-50 w-[400px]">
+                      <div className="p-4">
+                        <h4 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
+                          <span>{menu.icon}</span>
+                          {menu.label}
+                        </h4>
+                        <div className="space-y-1 max-h-96 overflow-y-auto">
+                          {menu.items.map((item, i) => (
+                            <a
+                              key={i}
+                              href="#"
+                              className="block text-sm text-gray-700 py-2 px-3 hover:text-[#003d66] hover:bg-gray-50 rounded transition-colors"
                             >
-                              <div className="flex items-center gap-3">
-                                <span className="text-gray-400 text-lg">
-                                  📄
-                                </span>
-                                <span className="text-sm font-medium text-gray-700 group-hover:text-[#003d66]">
-                                  {category.title}
-                                </span>
-                              </div>
-                              <svg
-                                className="w-4 h-4 text-gray-400 group-hover:text-[#003d66]"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </button>
+                              {item}
+                            </a>
                           ))}
                         </div>
-
-                        {/* Right Column - Items */}
-                        <div className="w-1/2 p-4">
-                          <h4 className="text-xs font-semibold text-gray-500 mb-3 uppercase tracking-wide">
-                            {menu.categories[hoveredCategory].title}
-                          </h4>
-                          <div className="space-y-1 max-h-80 overflow-y-auto">
-                            {menu.categories[hoveredCategory].items.length >
-                            0 ? (
-                              menu.categories[hoveredCategory].items.map(
-                                (item, i) => (
-                                  <a
-                                    key={i}
-                                    href="#"
-                                    className="block text-sm text-gray-700 py-2 px-3 hover:text-[#003d66] hover:bg-gray-50 rounded transition-colors"
-                                  >
-                                    {item}
-                                  </a>
-                                )
-                              )
-                            ) : (
-                              <p className="text-sm text-gray-500 italic">
-                                No items available
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Bottom CTA */}
-                      <div className="border-t border-gray-200 p-4">
-                        <div className="flex items-center justify-between bg-blue-50 rounded-lg p-3"></div>
                       </div>
                     </div>
                   )}
@@ -375,12 +303,15 @@ const ZolvitHeroSection = () => {
                   }
                   className="w-full text-left px-4 py-3 flex justify-between items-center hover:bg-[#004d7a] transition-colors"
                 >
-                  {menu.label}
+                  <span className="flex items-center gap-2">
+                    <span>{menu.icon}</span>
+                    {menu.label}
+                  </span>
                   <span>{activeDropdown === index ? "▲" : "▼"}</span>
                 </button>
                 {activeDropdown === index && (
                   <div className="px-6 py-2 space-y-2 bg-[#002440]">
-                    {menu.categories[0].items.map((item, i) => (
+                    {menu.items.map((item, i) => (
                       <a
                         key={i}
                         href="#"
@@ -516,6 +447,7 @@ const ZolvitHeroSection = () => {
           ))}
         </div>
       </div>
+
       {/* Wave & Bottom Section */}
       <div className="relative -mt-32 sm:-mt-48 z-10">
         <div
