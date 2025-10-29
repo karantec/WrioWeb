@@ -227,7 +227,6 @@ const ZolvitHeroSection = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button className="px-3 py-2 text-white hover:text-[#ffc107] text-sm flex items-center gap-1 transition-colors">
-                    <span className="mr-1">{menu.icon}</span>
                     {menu.label}
                     <svg
                       className="w-4 h-4"
@@ -244,7 +243,7 @@ const ZolvitHeroSection = () => {
                     </svg>
                   </button>
                   {activeDropdown === index && (
-                    <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl z-50 w-[400px]">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-xl z-50 w-[400px]">
                       <div className="p-4">
                         <h4 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
                           <span>{menu.icon}</span>

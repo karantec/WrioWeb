@@ -23,12 +23,11 @@ const StartupToScaleUp = () => {
             From Content Creation to Performance Marketing,
             <br />
             Cube Manages It All
-            <br />
-            <p className="text-lg sm:text-xl text-black font-medium  max-w-full">
-              All your brand needs under one roof-creative,social and growth
-              strategies delivered seamlessly.
-            </p>
           </h1>
+          <p className="text-lg sm:text-xl text-black font-medium max-w-full">
+            All your brand needs under one roof-creative,social and growth
+            strategies delivered seamlessly.
+          </p>
         </div>
 
         {/* 1️⃣ CONTENT CREATION */}
@@ -46,18 +45,12 @@ const StartupToScaleUp = () => {
                 <ul className="space-y-3">
                   {[
                     "Scriptwriting & Storyboarding",
-
                     "Video Production & Shooting",
-
                     "Photography & Cinematic Captures",
-
                     "Video Editing & Post Production",
-
                     "Graphic Design & Visual Assets",
-
                     "Motion Graphics & Animation",
                     "Reels & Short-form Video Creation",
-
                     "Brand-focused Creative Campaigns",
                   ].map((item, index) => (
                     <li
@@ -93,48 +86,18 @@ const StartupToScaleUp = () => {
               </div>
             </div>
 
-            {/* Testimonial Card 1 */}
-            <div
-              className="relative z-0 -mb-18
-            "
-            >
-              <div className="bg-gradient-to-r from-red-600 to-rose-600 p-8 mb-4 rounded-2xl shadow-lg transform rotate-1 mt-32">
-                <div className="flex flex-col sm:flex-row items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <img
-                      src="https://assets.vakilsearch.com/ic-start-business-testimonials-01-zpf.png"
-                      alt="Client"
-                      className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-white shadow-xl object-cover"
-                    />
-                  </div>
-                  <div className="text-white flex-1">
-                    <div className="mb-6">
-                      <svg
-                        className="w-10 h-20 text-white/30"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                      </svg>
-                    </div>
-                    <p className="text-base sm:text-lg leading-relaxed mb-6">
-                      Vignesh from Zolvit handled our PVT LTD company
-                      registration smoothly and on time. The entire process was
-                      professionally managed. I highly recommend their services
-                      for company registration
-                    </p>
-                    <p className="font-semibold text-lg">Shahri Sharma,</p>
-                    <p className="text-red-100 text-sm">
-                      Swarag Elderly Care Pvt. Ltd.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            {/* Testimonial Image 1 */}
+            <div className="relative z-0 mt-32">
+              <img
+                src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761737872/cubemedia/Testimonials_1_a5qcky.png"
+                alt="Client Testimonial"
+                className="w-full rounded-2xl shadow-lg"
+              />
             </div>
           </div>
         </section>
 
-        {/* 2️⃣ OPERATE WITH CLARITY */}
+        {/* 2️⃣ SOCIAL MEDIA MANAGEMENT */}
         <section className="mb-14 mt-20 relative z-10">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-red-600">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 flex items-center">
@@ -149,17 +112,11 @@ const StartupToScaleUp = () => {
                 <ul className="space-y-3">
                   {[
                     "Facebook, Instagram, YouTube, LinkedIn, Twitter",
-
                     "Follower Growth & Engagement Boost",
-
                     "Increasing Views & Audience Reach",
-
                     "Daily Posting on All Channels",
-
                     "Creative Storytelling & Content Strategy",
-
                     "Trend-based Campaigns & Hashtag Strategy",
-
                     "Community Engagement & Moderation",
                   ].map((item, index) => (
                     <li
@@ -195,44 +152,18 @@ const StartupToScaleUp = () => {
               </div>
             </div>
 
-            {/* Testimonial Card 2 */}
-            <div className="relative z-0">
-              <div className="bg-gradient-to-r from-red-600 to-rose-600 p-8 rounded-2xl shadow-lg transform rotate-1 mt-32">
-                <div className="flex flex-col sm:flex-row items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <img
-                      src="https://assets.vakilsearch.com/ic-start-business-testimonials-02-zpf.png"
-                      alt="Client"
-                      className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-white shadow-xl object-cover"
-                    />
-                  </div>
-                  <div className="text-white flex-1">
-                    <div className="mb-6">
-                      <svg
-                        className="w-10 h-20 text-white/30"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                      </svg>
-                    </div>
-                    <p className="text-base sm:text-lg leading-relaxed mb-6">
-                      I've been using Zolvit for annual accounting, and
-                      Muhammad's support was exceptional. He quickly resolved
-                      missed filings and ensured everything was on track.
-                    </p>
-                    <p className="font-semibold text-lg">Anis</p>
-                    <p className="text-red-100 text-sm">
-                      Managing Director – Bella Code
-                    </p>
-                  </div>
-                </div>
-              </div>
+            {/* Testimonial Image 2 */}
+            <div className="relative z-0 mt-32">
+              <img
+                src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761737872/cubemedia/Testimonials_3_cuzxtt.png"
+                alt="Client Testimonial"
+                className="w-full rounded-2xl shadow-lg"
+              />
             </div>
           </div>
         </section>
 
-        {/* 3️⃣ SCALE UP WITH STRATEGY */}
+        {/* 3️⃣ PERFORMANCE MARKETING */}
         <section className="mb-20 relative z-10">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-red-600">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 flex items-center">
@@ -247,17 +178,11 @@ const StartupToScaleUp = () => {
                 <ul className="space-y-3">
                   {[
                     "Meta Ads & Google Ads Campaigns",
-
                     "Dedicated & Proven Sales Funnels",
-
                     "High ROI Growth Strategies",
-
                     "Retargeting & Lead Nurturing",
-
                     "Conversion Rate Optimization",
-
                     "Audience Segmentation & AI Targeting",
-
                     "Budget-efficient Paid Campaigns",
                   ].map((item, index) => (
                     <li
@@ -293,40 +218,13 @@ const StartupToScaleUp = () => {
               </div>
             </div>
 
-            {/* Testimonial Card 3 */}
-            <div className="relative z-0 mb-9">
-              <div className="bg-gradient-to-r from-red-600 to-rose-600 p-8 rounded-2xl shadow-lg transform rotate-1 mt-32">
-                <div className="flex flex-col sm:flex-row items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <img
-                      src="https://assets.vakilsearch.com/ic-start-business-testimonials-03-zpf.png"
-                      alt="Client"
-                      className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-white shadow-xl object-cover"
-                    />
-                  </div>
-                  <div className="text-white flex-1">
-                    <div className="mb-6">
-                      <svg
-                        className="w-10 h-20 text-white/30"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                      </svg>
-                    </div>
-                    <p className="text-base sm:text-lg leading-relaxed mb-6">
-                      I reached out to Sourav for help with trademark
-                      registration, and he guided me through every step
-                      smoothly. His ongoing support has been invaluable, making
-                      the entire process seamless.
-                    </p>
-                    <p className="font-semibold text-lg">Parmjeet Singh</p>
-                    <p className="text-red-100 text-sm">
-                      Founder - Jaat Matrimony
-                    </p>
-                  </div>
-                </div>
-              </div>
+            {/* Testimonial Image 3 */}
+            <div className="relative z-0 mt-32 mb-9">
+              <img
+                src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761737872/cubemedia/Testimonials_2_kpxfuk.png"
+                alt="Client Testimonial"
+                className="w-full rounded-2xl shadow-lg"
+              />
             </div>
           </div>
         </section>
