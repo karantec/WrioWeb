@@ -1,119 +1,123 @@
 import React, { useState, useEffect } from "react";
 import {
-  Newspaper,
   PenTool,
-  BarChart,
-  ArrowRight,
-  Sparkles,
-  TrendingUp,
-  Check,
+  Users,
   FileText,
+  Sparkles,
+  Target,
+  BarChart3,
+  ClipboardCheck,
+  PlayCircle,
+  Download,
+  Check,
+  ArrowRight,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
-
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function FreeLearning() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
+
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Learn, grow, and improve — for free.",
+    title: "Free Learning Videos & Downloadable Resources",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "Access free marketing tips, templates, and case studies curated by Cube’s experts.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia offers a growing library of free resources — including tutorials, marketing templates, and real case studies — to help learners, startups, and entrepreneurs level up their marketing game without cost barriers.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Free Video Tutorials",
+      "Downloadable PDFs & Templates",
+      "Access to Marketing Case Studies",
     ],
-    price: "₹4,999/project",
+    price: "Free Access",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Empower Yourself with Practical, Free Learning",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "Free content helps entrepreneurs and learners get practical, high-quality tools without financial barriers — making professional marketing education accessible to everyone.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Browse Cube’s Learning Portal",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "Explore our library of marketing, branding, and AI-related learning materials — all freely accessible online.",
+      icon: Target,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Watch Free Marketing Tutorials",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
+        "Learn through short, easy-to-follow videos created by industry professionals.",
+      icon: PlayCircle,
     },
     {
       step: "03",
-      title: "Distribute to Verified News Platforms",
+      title: "Download PDFs and Templates",
       description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
-      icon: FileText,
+        "Access ready-to-use templates, guides, and frameworks designed for real-world marketing challenges.",
+      icon: Download,
     },
     {
       step: "04",
-      title: "Monitor & Publish Coverage",
+      title: "Apply Them to Your Business",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "Implement what you learn to improve your content, campaigns, and brand performance.",
+      icon: PenTool,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Join Webinars for Deeper Learning",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "Take your skills further by joining Cube’s free or low-cost webinars led by marketing experts.",
+      icon: Users,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Completely free access to curated materials.",
+      "Created by Cube’s strategy and creative team.",
+      "Updated regularly with new insights and tools.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Cube Multimedia Learning Hub",
+    challenge:
+      "Needed to educate and engage a wider audience with zero-cost content.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
+      "Released free learning resources, templates, and mini-guides across web and social channels.",
     result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Achieved 10,000+ downloads and built strong community trust among learners and entrepreneurs.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Do I need to sign up?",
+      a: "Yes, a simple and free registration is required to access all learning materials.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Can I share materials?",
+      a: "Yes, sharing is encouraged with proper credit to Cube Multimedia.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Start Learning Today — For Free",
+    subtitle:
+      "Explore Cube’s free learning hub and get practical marketing knowledge at your fingertips.",
+    buttonText: "Explore Free Resources",
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-rose-50">
       <MarketingLandingPage />

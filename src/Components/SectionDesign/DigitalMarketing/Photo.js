@@ -8,110 +8,116 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
+  Camera,
+  Sun,
+  FileCheck,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
 
-export default function MediaPRCoverage() {
+export default function Photography() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Capture. Create. Connect.",
+    title: "Photography & Videography",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "From lifestyle to product to corporate — Cube captures moments that move audiences. Every frame reflects clarity and class.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia provides professional photography and videography services that combine creativity, lighting expertise, and cinematic storytelling — helping brands visually stand out.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Creative Direction & Planning",
+      "Professional Photography & Videography",
+      "Post-production & Optimization",
     ],
-    price: "₹4,999/project",
+    price: "₹2,999/project",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Visuals Drive Emotion and Brand Recall",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "High-quality photos and videos capture emotion, elevate perception, and make your brand memorable. They tell your story in a way words can’t.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Pre-production Planning",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
-    },
-    {
-      step: "02",
-      title: "Write Compelling Press Releases",
-      description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
-    },
-    {
-      step: "03",
-      title: "Distribute to Verified News Platforms",
-      description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
+        "We plan every detail — from concept, location, and lighting to framing and style.",
       icon: FileText,
     },
     {
-      step: "04",
-      title: "Monitor & Publish Coverage",
+      step: "02",
+      title: "Shoot with Creative Direction",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "Our team executes the shoot with professional photographers and DOPs to bring your vision to life.",
+      icon: Camera,
+    },
+    {
+      step: "03",
+      title: "Lighting & Styling Setup",
+      description:
+        "We use advanced lighting techniques and professional styling to ensure every frame looks perfect.",
+      icon: Sun,
+    },
+    {
+      step: "04",
+      title: "Post-production Edits",
+      description:
+        "We enhance visuals through color correction, retouching, and cinematic editing for a polished output.",
+      icon: Scissors,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Final Delivery & Optimization",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "Delivering ready-to-publish content in multiple formats optimized for social media and ads.",
+      icon: FileCheck,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Professional gear and lighting setup.",
+      "Skilled photographers and DOPs.",
+      "High-quality edits for social or ad use.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Arti / Anushree Malhotra Design",
+    challenge: "Needed lifestyle photoshoots for fashion campaigns.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Shot editorial-style visuals focusing on elegance, fabric detail, and aesthetic consistency.",
+    result: "Boosted online inquiries and catalog appeal.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Do you provide models?",
+      a: "Yes, available as an optional service with prior booking.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "What formats do you deliver?",
+      a: "We deliver both edited and raw files, based on your project requirements.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Let Your Visuals Speak Louder Than Words",
+    subtitle:
+      "Schedule your professional photoshoot or video session with Cube Multimedia today.",
+    buttonText: "Book My Shoot",
   };
 
   return (

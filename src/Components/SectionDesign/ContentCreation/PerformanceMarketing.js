@@ -8,110 +8,126 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
+  SearchCheck,
+  MessageCircle,
+  Megaphone,
+  MapPin,
+  Target,
+  Play,
+  RefreshCcw,
+  FileCheck,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
 
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function PerformanceMarketing() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Run campaigns that sell, not just reach.",
+    title: "Performance Marketing (Meta & Google Ads)",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "We don’t just run ads — we run results. Cube Multimedia plans, executes, and optimizes high-performing Meta and Google Ads to bring measurable growth.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Our performance marketing experts build, manage, and optimize campaigns that maximize your ROI — turning ad spend into real, measurable business results.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Meta & Google Campaign Setup",
+      "Conversion Tracking & Optimization",
+      "ROI-Driven Strategy & Reporting",
     ],
-    price: "₹4,999/project",
+    price: "₹5,999/month",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Performance Marketing Scales Brands Faster",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "Performance marketing helps brands scale by reaching the right audience at the right moment. It’s the foundation of measurable, ROI-driven growth — blending creativity with data precision.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Research & Audit",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "Analyze your competition, audience behavior, and existing campaigns to build a strong foundation.",
+      icon: BarChart,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Strategy Planning",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
+        "Develop funnel-based ad strategies to attract, nurture, and convert potential customers efficiently.",
+      icon: Target,
     },
     {
       step: "03",
-      title: "Distribute to Verified News Platforms",
+      title: "Execution",
       description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
-      icon: FileText,
+        "Run conversion-focused ad campaigns across Meta and Google using optimized creatives and copy.",
+      icon: Play,
     },
     {
       step: "04",
-      title: "Monitor & Publish Coverage",
+      title: "Optimization",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "Continuously monitor, A/B test, and refine campaigns daily for maximum performance and ROI.",
+      icon: RefreshCcw,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Reporting",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "Provide detailed weekly and monthly performance reports with lead quality insights and analytics.",
+      icon: FileCheck,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Certified ad specialists managing 50+ campaigns monthly.",
+      "Transparent ad spend and performance reports.",
+      "High-quality leads through advanced targeting.",
+      "Full-funnel campaign planning and management.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Mandhan Projects",
+    challenge: "High lead cost in the competitive real estate sector.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
+      "Executed localized Meta and Google campaigns with A/B-tested creatives and WhatsApp integration.",
     result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Generated 300+ verified leads in 30 days with 40% lower cost per lead.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "What’s the minimum budget?",
+      a: "Campaigns start from ₹10,000/month for ad spends.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Do you handle both Meta and Google?",
+      a: "Yes, we manage campaigns across both platforms based on your goals.",
+    },
+    {
+      q: "Can I monitor my campaign?",
+      a: "Yes, you’ll receive weekly reports and have access to campaign analytics.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Boost Your Business Growth",
+    subtitle: "Run performance campaigns that convert with Cube Multimedia.",
+    buttonText: "Book a Strategy Call",
   };
 
   return (

@@ -1,119 +1,120 @@
 import React, { useState, useEffect } from "react";
 import {
-  Newspaper,
   PenTool,
-  BarChart,
-  ArrowRight,
-  Sparkles,
-  TrendingUp,
-  Check,
+  Users,
   FileText,
+  Sparkles,
+  Target,
+  BarChart3,
+  ClipboardCheck,
+  Check,
+  ArrowRight, // ✅ added both here
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
 
-export default function MediaPRCoverage() {
+export default function SalesConsultancy() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
+
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "From leads to loyal customers.",
+    title: "Sales Consultancy",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "Marketing brings leads — sales closes deals. Cube helps businesses improve conversion, team structure, and customer communication.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Our sales consultancy helps businesses streamline their sales process, enhance communication, and close more deals through proven frameworks and practical training.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Sales Funnel Analysis",
+      "Team Training & CRM Integration",
+      "Sales Strategy Development",
     ],
-    price: "₹4,999/project",
+    price: "₹1,999/session",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Bridge the Gap Between Marketing and Revenue",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "Sales consultancy bridges the gap between marketing and revenue — improving conversion performance and enhancing client experience at every touchpoint.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Analyze Your Current Sales Funnel",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "We evaluate your sales funnel, lead flow, and conversion data to identify key drop-off points.",
+      icon: Target,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Identify Communication or Process Gaps",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
+        "We detect where messaging or workflow breaks down and suggest actionable fixes.",
+      icon: BarChart3,
     },
     {
       step: "03",
-      title: "Distribute to Verified News Platforms",
+      title: "Create Sales Scripts & CRM Systems",
       description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
-      icon: FileText,
+        "We develop customized scripts, follow-up structures, and CRM setups to standardize success.",
+      icon: PenTool,
     },
     {
       step: "04",
-      title: "Monitor & Publish Coverage",
+      title: "Train Sales Team with Real Case Studies",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "We conduct interactive sales training — using real-world examples to sharpen team performance.",
+      icon: Users,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Review & Optimize After Results",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "We measure results post-implementation and refine your strategy for sustained growth.",
+      icon: ClipboardCheck,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Customized sales strategy per industry.",
+      "Focus on practical improvements, not theory.",
+      "Integration of sales + marketing systems.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "P Leathers",
+    challenge: "High lead generation but low conversion rate.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Built a new sales flow integrated with WhatsApp automation and CRM-based follow-ups.",
+    result: "Sales conversion improved by 60% in two months.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Do you train teams too?",
+      a: "Yes, both live and online training sessions are available for sales teams.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Can small businesses afford it?",
+      a: "Yes, our consultancy sessions start at very affordable rates for growing businesses.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Turn Leads Into Loyal Customers",
+    subtitle:
+      "Enhance your sales performance and close more deals with Cube Multimedia.",
+    buttonText: "Book My Sales Consulting Session",
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-rose-50">
       <MarketingLandingPage />

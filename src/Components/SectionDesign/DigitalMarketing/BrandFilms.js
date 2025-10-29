@@ -8,110 +8,111 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
-
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function BrandFilms() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Cinematic storytelling that sells.",
+    title: "Brand Films / Ad Films",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "We produce cinematic ad films that tell your story with emotion, precision, and purpose. Every frame is designed to connect and convert.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia’s production team delivers high-quality, story-driven brand films that capture attention and inspire action — from concept to final export.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Concept & Scripting",
+      "Shoot & Direction",
+      "Edit and Color Grade",
     ],
-    price: "₹4,999/project",
+    price: "₹3,999/project",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Brand Films Build Authority and Connection",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "A brand film builds emotional connection and authority by showing your values beyond products — it transforms audiences into loyal advocates.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Concept & Scripting",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
-    },
-    {
-      step: "02",
-      title: "Write Compelling Press Releases",
-      description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
+        "We brainstorm your story, message, and tone — then create an engaging script that reflects your brand identity.",
       icon: PenTool,
     },
     {
-      step: "03",
-      title: "Distribute to Verified News Platforms",
+      step: "02",
+      title: "Casting & Pre-production",
       description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
-      icon: FileText,
+        "We handle casting, location scouting, and logistics to ensure a seamless shoot day experience.",
+      icon: Users,
+    },
+    {
+      step: "03",
+      title: "Shoot & Direction",
+      description:
+        "Our experienced directors bring your script to life with cinematic visuals and professional crew setup.",
+      icon: Video,
     },
     {
       step: "04",
-      title: "Monitor & Publish Coverage",
+      title: "Edit and Color Grade",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "We refine every frame — editing, sound design, and color grading for a premium finish.",
+      icon: Scissors,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Final Export for Campaigns",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "We deliver optimized versions for TV, YouTube, and social media — ready to go live anywhere.",
+      icon: FileText,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Full in-house team for production and post.",
+      "Experienced creative directors.",
+      "High-quality visuals suited for ads and web.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Srabanti Chatterjee",
+    challenge: "Needed personal brand promo video for endorsements.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Produced a cinematic brand short highlighting her personality and story.",
+    result: "2M+ views and increased brand collaboration offers.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Do you handle casting?",
+      a: "Yes, we manage the full production process including casting and crew management.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Where can it be used?",
+      a: "Your ad film can be used on TV, YouTube, or any social media advertising campaign.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Bring Your Brand to Screen",
+    subtitle: "Create your next ad film with Cube Multimedia.",
+    buttonText: "Start My Ad Film Project",
   };
 
   return (

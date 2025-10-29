@@ -1,117 +1,121 @@
 import React, { useState, useEffect } from "react";
 import {
-  Newspaper,
   PenTool,
-  BarChart,
-  ArrowRight,
-  Sparkles,
-  TrendingUp,
-  Check,
+  Users,
   FileText,
+  Sparkles,
+  Target,
+  BarChart3,
+  ClipboardCheck,
+  BookOpen, // ✅ Added
+  Presentation, // ✅ Added (since used in Step 03)
+  Check, // ✅ Added
+  ArrowRight, // ✅ Added
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
 
-export default function MediaPRCoverage() {
+export default function TrainingAndWorkshop() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
+
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Empower your team with real-world marketing skills.",
+    title: "Training & Workshops",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "Cube conducts interactive workshops to teach marketing, branding, and AI integration to professionals and students.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Our hands-on workshops deliver practical skills that help individuals and teams apply marketing, branding, and automation knowledge in real-world scenarios.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Customized Syllabus Creation",
+      "Live or Hybrid Workshop Sessions",
+      "Post-Workshop Feedback & Support",
     ],
-    price: "₹4,999/project",
+    price: "₹4,999/session",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Learn by Doing — Not Just Listening",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "Workshops help teams gain practical knowledge they can immediately apply to live projects — ensuring faster learning and long-term impact.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Define Workshop Topic and Audience",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "We start by understanding your team’s skill level and learning objectives to tailor the perfect workshop.",
+      icon: Target,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Prepare Customized Syllabus",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
+        "We design a topic-specific, hands-on syllabus that combines industry insights with actionable exercises.",
+      icon: BookOpen,
     },
     {
       step: "03",
-      title: "Distribute to Verified News Platforms",
+      title: "Conduct Live or Hybrid Sessions",
       description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
-      icon: FileText,
+        "Our sessions are conducted live (in-person or online), ensuring interaction and participation.",
+      icon: Presentation,
     },
     {
       step: "04",
-      title: "Monitor & Publish Coverage",
+      title: "Provide Q&A and Real-Life Case Studies",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "We engage participants with Q&A discussions, live demos, and real-world marketing case studies.",
+      icon: Users,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Post-Workshop Report and Feedback",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "After each session, we share insights, performance feedback, and recommendations for ongoing growth.",
+      icon: FileText,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Hands-on sessions led by experts.",
+      "Customizable training modules.",
+      "Perfect for startups, colleges, and agencies.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Cube Multimedia (Internal & Public Events)",
+    challenge: "Needed a practical training framework for young marketers.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Launched the 10x Growth Workshop with live business demonstrations.",
+    result: "Trained over 500 learners with a 95% satisfaction rate.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Do you offer offline sessions?",
+      a: "Yes, we conduct workshops across major Indian cities.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Can we organize one for our college or team?",
+      a: "Absolutely! We offer group sessions for institutions and organizations.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Empower Your Team with Real-World Marketing Skills",
+    subtitle:
+      "Learn through Cube Multimedia’s practical and interactive workshops.",
+    buttonText: "Book a Workshop",
   };
 
   return (

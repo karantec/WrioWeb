@@ -1,117 +1,116 @@
 import React, { useState, useEffect } from "react";
 import {
-  Newspaper,
-  PenTool,
-  BarChart,
-  ArrowRight,
   Sparkles,
-  TrendingUp,
-  Check,
   FileText,
+  Video,
+  Mic,
+  Languages,
+  Sliders,
+  Check,
+  ArrowRight,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
-
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function VoiceOver() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Voice that connects emotions.",
+    title: "Voiceover & Dubbing",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "Voice brings emotion to visuals. We offer multi-language voiceovers and dubbing that add life to your content.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia delivers professional multi-language voiceovers and dubbing services — adding authenticity, tone, and emotional resonance to your brand videos.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Multi-language Voiceovers",
+      "Professional Studio Recording",
+      "Mixing & Mastering",
     ],
-    price: "₹4,999/project",
+    price: "₹1,999/project",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "The Right Voice Sets Tone and Credibility",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "Professional voiceovers and dubbing enhance storytelling, build credibility, and ensure audience engagement across different languages and regions.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Select Language & Voice Tone",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "Choose from a range of languages and voice tones that best represent your brand and audience.",
+      icon: Languages,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Script Review & Approval",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
-    },
-    {
-      step: "03",
-      title: "Distribute to Verified News Platforms",
-      description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
+        "Our team refines and aligns the script with voice tone and delivery style before recording.",
       icon: FileText,
     },
     {
-      step: "04",
-      title: "Monitor & Publish Coverage",
+      step: "03",
+      title: "Studio-grade Recording",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "Voice artists record using professional equipment ensuring clear, high-quality sound output.",
+      icon: Mic,
+    },
+    {
+      step: "04",
+      title: "Syncing with Visuals",
+      description:
+        "We sync the audio perfectly with visuals, maintaining natural flow and timing.",
+      icon: Video,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Final Mixing & Mastering",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "We apply studio-grade mastering to ensure your audio blends seamlessly with your final content.",
+      icon: Sliders,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Professional male/female voice artists.",
+      "Bangla, Hindi, and English dubbing available.",
+      "Studio-quality sound mastering.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Multiple Projects",
+    challenge: "Needed multi-language content delivery.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
+      "Created voiceovers and dubbing for ads, explainer videos, and promotional campaigns.",
     result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Expanded audience reach across regions with localized voice content.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Do you provide voice samples?",
+      a: "Yes, we offer multiple tone and language options before recording.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Can I record remotely?",
+      a: "Yes, we support online collaboration for remote voice sessions and approvals.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Give Your Brand a Voice That Stands Out",
+    subtitle: "Collaborate with Cube Multimedia for professional voiceovers.",
+    buttonText: "Start My Voiceover Project",
   };
 
   return (

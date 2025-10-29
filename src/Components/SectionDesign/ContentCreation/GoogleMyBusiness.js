@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import {
   Newspaper,
   PenTool,
@@ -8,71 +9,78 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
+  SearchCheck,
+  MessageCircle,
+  Megaphone,
+  MapPin,
+  Image,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
-
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function GoogleMyBusiness() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Be discovered where it matters most.",
+    title: "Google My Business Optimization",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "We optimize your Google Business Profile for better visibility, leads, and customer trust.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia enhances your Google Business presence with complete optimization — from visuals and keywords to reviews and posts — ensuring your brand ranks high in local searches.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Profile Audit & Optimization",
+      "Keyword & Visual Enhancement",
+      "Review & Reputation Management",
     ],
-    price: "₹4,999/project",
+    price: "₹2,999/project",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Local Visibility Drives Real Leads",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "A well-optimized Google profile ensures your business shows up when nearby customers search for your services — improving visibility, credibility, and walk-in traffic.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Audit Current Listing",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "We evaluate your current Google Business Profile setup, insights, and missing elements.",
+      icon: SearchCheck,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Add Visuals, Keywords & Service Updates",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
+        "We optimize photos, categories, keywords, and services for better visibility and engagement.",
+      icon: Image,
     },
     {
       step: "03",
-      title: "Distribute to Verified News Platforms",
+      title: "Manage Reviews & Responses",
       description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
-      icon: FileText,
+        "We handle customer reviews professionally to improve credibility and response rate.",
+      icon: MessageCircle,
     },
     {
       step: "04",
-      title: "Monitor & Publish Coverage",
+      title: "Post Offers & Events Regularly",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "We create and post updates, offers, and events to keep your business active on Google.",
+      icon: Megaphone,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Monitor Analytics & Rankings",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
+        "We track your profile performance, rankings, and engagement for continued improvement.",
       icon: BarChart,
     },
   ];
@@ -80,38 +88,38 @@ export default function MediaPRCoverage() {
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Enhanced map ranking and business visibility.",
+      "Effective review and reputation management.",
+      "Consistent updates to maintain top performance.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Kidzee",
+    challenge: "Low Google visibility for local branches.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Optimized multiple branch profiles with geo-targeted keywords and updated visuals.",
+    result: "Ranked in top 3 Google local searches within 30 days.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Is this different from SEO?",
+      a: "Yes, Google My Business optimization focuses on improving your visibility on Google Maps and local search results.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "How often should I update?",
+      a: "Posting weekly and updating offers regularly helps sustain your ranking and visibility.",
     },
   ];
 
   const cta = {
-    icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    icon: MapPin,
+    title: "Make Your Business Easy to Find",
+    subtitle:
+      "Get your Google Business Profile optimized with Cube Multimedia.",
+    buttonText: "Optimize My Google Profile",
   };
 
   return (

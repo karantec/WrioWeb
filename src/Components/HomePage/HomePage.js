@@ -126,12 +126,18 @@ const ZolvitHeroSection = () => {
               "https://randomuser.me/api/portraits/women/4.jpg",
               "https://randomuser.me/api/portraits/men/5.jpg",
             ].map((src, i) => (
-              <img
+              <a
                 key={i}
-                src={src}
-                alt="Reviewer"
-                className="w-8 h-8 rounded-full border-2 border-gray-800"
-              />
+                href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LMsoNC80NTQxYLRSNaiwSEsxMTdINk40TE6xsDQwtjKosDRPMk4ySjUzMrc0SkwzMvbiTy5NSlXILc0pycxNTclMBAC-QBTB&q=cube+multimedia&rlz=1C1ONGR_enIN1130IN1130&oq=cube&gs_lcrp=EgZjaHJvbWUqEggDEC4YJxivARjHARiABBiKBTIGCAAQRRg8MgYIARBFGDwyDAgCEEUYORixAxiABDISCAMQLhgnGK8BGMcBGIAEGIoFMgwIBBAuGEMYgAQYigUyBggFEEUYPTIGCAYQRRg8MgYIBxBFGDzSAQg3MzQyajBqN6gCCLACAfEFji1jvnFnQRg&sourceid=chrome&ie=UTF-8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={src}
+                  alt="Reviewer"
+                  className="w-8 h-8 rounded-full border-2 border-gray-800 hover:scale-110 transition-transform duration-200"
+                />
+              </a>
             ))}
           </div>
         </div>

@@ -8,110 +8,115 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
+  Film,
+  RefreshCcw,
+  FileCheck,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
 
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function VideoEditing() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Editing that tells stories.",
+    title: "Video Editing",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "Editing isn’t cutting clips — it’s storytelling in motion. We turn raw footage into content that connects emotionally and professionally.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia transforms raw footage into cinematic, emotionally engaging videos that speak to your audience and strengthen your brand presence.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Cinematic Editing",
+      "Color Grading & Sound Design",
+      "Multi-format Export",
     ],
-    price: "₹4,999/project",
+    price: "₹1,999/project",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Editing Builds Rhythm, Emotion, and Flow",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "Good editing gives rhythm, purpose, and emotion to every frame. It’s what turns ordinary footage into memorable storytelling and a professional brand statement.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Receive & Review Raw Footage",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
-    },
-    {
-      step: "02",
-      title: "Write Compelling Press Releases",
-      description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
-    },
-    {
-      step: "03",
-      title: "Distribute to Verified News Platforms",
-      description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
+        "We analyze your footage to understand tone, purpose, and best storytelling approach.",
       icon: FileText,
     },
     {
-      step: "04",
-      title: "Monitor & Publish Coverage",
+      step: "02",
+      title: "Editing with Color Grading & Sound",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "Our editors enhance your footage with transitions, sound design, and color grading for visual consistency.",
+      icon: Scissors,
+    },
+    {
+      step: "03",
+      title: "Add Captions, Effects & Brand Feel",
+      description:
+        "We add brand-aligned motion graphics, effects, and subtitles for a polished, professional finish.",
+      icon: Film,
+    },
+    {
+      step: "04",
+      title: "Revision & Feedback Round",
+      description:
+        "We refine your video based on detailed client feedback for complete satisfaction.",
+      icon: RefreshCcw,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Final Export for Multiple Formats",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "Your project is delivered in optimized formats for YouTube, reels, ads, or corporate presentations.",
+      icon: FileCheck,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Experienced editors with creative storytelling sense.",
+      "Fast turnaround with strict quality control.",
+      "Perfect for ads, podcasts, reels, and corporate use.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
     client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    challenge: "Needed clean, cinematic editing for interview reels.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Used jump cuts, mood grading, and subtitling for clarity and better narrative flow.",
+    result: "Doubled view time and audience retention per episode.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Do you handle subtitles?",
+      a: "Yes, we provide subtitles in multiple languages upon request.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Can I send footage online?",
+      a: "Yes, you can share your raw footage via Google Drive or WeTransfer.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Turn Raw Ideas into Finished Masterpieces",
+    subtitle: "Edit with Cube Multimedia and bring your vision to life.",
+    buttonText: "Start My Editing Project",
   };
 
   return (

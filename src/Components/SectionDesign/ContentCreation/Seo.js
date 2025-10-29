@@ -8,71 +8,76 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
+  Search,
+  Settings,
+  Edit3,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
-
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function Seo() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Rank higher. Reach further.",
+    title: "SEO (On-page & Local)",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "Boost your search visibility organically. We use strategy, content, and analytics to help brands rank higher and reach the right audience.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia delivers data-driven SEO solutions that combine keyword optimization, content enhancement, and local visibility tactics to ensure your business dominates search results.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Keyword & Competitor Research",
+      "On-page & Technical SEO",
+      "Local SEO Optimization",
     ],
-    price: "₹4,999/project",
+    price: "₹4,999/month",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "SEO Builds Sustainable Growth",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "SEO drives consistent, high-quality organic traffic — the most cost-effective way to build long-term visibility, trust, and leads without heavy ad spend.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Keyword & Competitor Research",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "We identify profitable keywords and analyze competitors to find ranking opportunities.",
+      icon: Search,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "On-page Optimization",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
-    },
-    {
-      step: "03",
-      title: "Distribute to Verified News Platforms",
-      description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
+        "We optimize titles, meta tags, content, and internal linking to improve site structure and crawlability.",
       icon: FileText,
     },
     {
-      step: "04",
-      title: "Monitor & Publish Coverage",
+      step: "03",
+      title: "Technical SEO & Backlinks",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "We fix site issues, improve loading speed, and build quality backlinks for authority and trust.",
+      icon: Settings,
+    },
+    {
+      step: "04",
+      title: "Content Improvement",
+      description:
+        "We refine your existing content and add new SEO-friendly material that attracts and engages readers.",
+      icon: Edit3,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Ranking Analysis & Report",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
+        "We track your performance and deliver monthly keyword and ranking reports for transparency.",
       icon: BarChart,
     },
   ];
@@ -80,38 +85,38 @@ export default function MediaPRCoverage() {
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Expert team specializing in both local and global SEO.",
+      "Tools-based audit and analytics-driven strategy.",
+      "Long-term organic growth beyond paid ads.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Lakmé Academy",
+    challenge: "Low Google ranking for their local branch pages.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Optimized on-page structure, metadata, and keywords targeting 'beauty academy near me'.",
+    result: "Ranked #1 in Kolkata searches within 45 days.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "When will I see SEO results?",
+      a: "Most websites start seeing noticeable ranking improvements within 6–8 weeks of consistent SEO efforts.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Do you provide reports?",
+      a: "Yes, we share detailed monthly reports with keyword rankings, traffic data, and SEO insights.",
     },
   ];
 
   const cta = {
-    icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    icon: TrendingUp,
+    title: "Climb the Ranks Organically",
+    subtitle:
+      "Start your SEO journey with Cube Multimedia and grow sustainably.",
+    buttonText: "Start SEO Today",
   };
 
   return (

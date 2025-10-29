@@ -8,71 +8,78 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
+  Search,
+  Workflow,
+  Plug,
+  CheckCircle,
+  Zap,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
-
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function MarketAuto() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Automate. Analyze. Accelerate.",
+    title: "Marketing Automation",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "Automate, analyze, and grow — we integrate AI and automation tools to streamline your marketing flow and save hours every week.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia helps businesses implement intelligent automation systems — from CRM to WhatsApp — making every customer interaction faster and smarter.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "End-to-end automation setup",
+      "AI-powered workflows",
+      "Integrated CRM & communication tools",
     ],
     price: "₹4,999/project",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Automation Builds Efficiency",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "Marketing automation ensures consistent follow-ups, faster responses, and smarter insights — giving you more control while reducing manual workload.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Audit Existing Systems",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "We assess your current marketing tools and identify automation opportunities.",
+      icon: Search,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Workflow Mapping",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
+        "We design an efficient automation flow tailored to your customer journey.",
+      icon: Workflow,
     },
     {
       step: "03",
-      title: "Distribute to Verified News Platforms",
+      title: "Integration Setup",
       description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
-      icon: FileText,
+        "We connect CRM, WhatsApp, and Mail tools for seamless automated operations.",
+      icon: Plug,
     },
     {
       step: "04",
-      title: "Monitor & Publish Coverage",
+      title: "Testing & Launch",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "We ensure smooth execution and error-free automation before deployment.",
+      icon: CheckCircle,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Performance Tracking & Support",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
+        "We monitor automation performance and provide continuous optimization.",
       icon: BarChart,
     },
   ];
@@ -80,38 +87,38 @@ export default function MediaPRCoverage() {
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Automated workflows built for real business challenges.",
+      "Enhanced lead nurturing and faster customer response.",
+      "End-to-end technical integration handled by our expert team.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Mandhan Projects",
+    challenge: "Manual follow-ups were reducing sales efficiency.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Integrated WhatsApp and CRM automation for instant lead handling and tracking.",
+    result: "Response time reduced by 70% and conversions improved by 35%.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Do you use AI tools?",
+      a: "Yes, Cube integrates AI-powered CRMs and chat automation to improve customer engagement and response times.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Can this work for small businesses?",
+      a: "Absolutely — automation saves time, reduces errors, and enhances customer experience for any business size.",
     },
   ];
 
   const cta = {
-    icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    icon: Zap,
+    title: "Streamline Your Business with Automation",
+    subtitle:
+      "Upgrade your marketing system with smart automation powered by Cube Multimedia.",
+    buttonText: "Get Started with Automation",
   };
 
   return (

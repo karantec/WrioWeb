@@ -8,112 +8,117 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
+  Target,
+  BarChart3,
+  ClipboardCheck,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
-
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function Marketing() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
+
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Strategic marketing that drives clarity and growth.",
+    title: "Marketing Consultancy",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "We help you see the bigger picture — Cube’s marketing consultancy gives your business direction, clarity, and actionable plans to grow sustainably.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Our consulting sessions provide practical, data-driven strategies tailored to your brand’s unique challenges and goals. Every session is focused on measurable impact and long-term growth.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Brand Audit & Competitor Analysis",
+      "Strategic Marketing Roadmap",
+      "Performance Optimization Guidance",
     ],
-    price: "₹4,999/project",
+    price: "₹1,999/session",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "Make Every Marketing Rupee Count",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "Consultancy helps brands understand what works, what doesn’t, and where to go next — ensuring every marketing rupee delivers maximum ROI.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Brand Audit & Competitor Analysis",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "We begin by analyzing your current brand presence and competitors to identify key strengths and weaknesses.",
+      icon: Target,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Identify Gaps in Marketing Approach",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
+        "We pinpoint missing opportunities, misalignments, or inefficiencies in your current marketing strategy.",
+      icon: BarChart3,
     },
     {
       step: "03",
-      title: "Distribute to Verified News Platforms",
+      title: "Develop Actionable Strategy Roadmap",
       description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
-      icon: FileText,
+        "We create a clear, customized marketing roadmap to align your brand goals with measurable actions.",
+      icon: PenTool,
     },
     {
       step: "04",
-      title: "Monitor & Publish Coverage",
+      title: "Implement Test Campaigns (If Needed)",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "We execute small-scale test campaigns to validate assumptions and measure initial results.",
+      icon: Users,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Monitor & Optimize Results",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "We track performance metrics, gather feedback, and refine strategies for continuous growth.",
+      icon: ClipboardCheck,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Practical, data-driven marketing plans.",
+      "Consultants with proven business experience.",
+      "Full guidance from planning to execution.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Mandhan Projects",
+    challenge: "Needed clear digital growth direction.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Conducted detailed ad and branding audit with a new funnel roadmap.",
+    result: "Lead quality improved and marketing ROI increased by 45%.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Is this a one-time session?",
+      a: "Both one-time and ongoing consulting options are available based on your business needs.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Can you help implement strategies?",
+      a: "Yes, through Cube’s in-house performance and creative team.",
     },
   ];
 
   const cta = {
     icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    title: "Get Clarity Before Your Next Move",
+    subtitle:
+      "Consult with Cube Multimedia and build a marketing strategy that truly works.",
+    buttonText: "Book My Consulting Session",
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-rose-50">
       <MarketingLandingPage />

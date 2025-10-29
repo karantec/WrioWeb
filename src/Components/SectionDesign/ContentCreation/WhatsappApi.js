@@ -8,110 +8,122 @@ import {
   TrendingUp,
   Check,
   FileText,
+  Users,
+  Video,
+  Scissors,
+  ShieldCheck,
+  Rocket,
+  Activity,
+  MessageCircle,
 } from "lucide-react";
-import MarketingLandingPage from "./TopDesign";
-import TestimonialCarousel from "./Testimonial";
 
-export default function MediaPRCoverage() {
+import MarketingLandingPage from "../TopDesign";
+import TestimonialCarousel from "../Testimonial";
+export default function WhatsappApi() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   // 🌟 Hero content
   const heroContent = {
-    tag: "Media that moves brands forward.",
-    title: "Media News & PR Coverage",
+    tag: "Engage smarter with automation.",
+    title: "WhatsApp API Marketing",
     subtitle:
-      "Get your brand featured where it matters — Cube connects you with top media outlets for authentic press coverage and lasting credibility.",
+      "We help brands communicate smarter through verified WhatsApp Business APIs — automated, personalized, and high-response marketing that converts.",
     description:
-      "We make your story newsworthy. Cube Multimedia helps brands and public figures gain verified press visibility through premium news and PR channels.",
+      "Cube Multimedia integrates official WhatsApp APIs to help businesses send verified, secure, and interactive messages — boosting engagement and conversion rates effortlessly.",
     features: [
-      "Verified Media Placement",
-      "Press Release Writing",
-      "Reputation Building",
+      "Business Verification",
+      "Automated Message Campaigns",
+      "Performance Tracking & Optimization",
     ],
-    price: "₹4,999/project",
+    price: "₹3,999/project",
   };
 
   const whyItMatters = {
     tag: "Why It Matters",
-    title: "Media Visibility Builds Trust",
+    title: "WhatsApp Has Over 95% Open Rate",
     description:
-      "Media coverage isn’t just exposure — it’s validation. It builds credibility, social proof, and strengthens your brand authority in your industry.",
+      "With official WhatsApp APIs, your brand can send updates, offers, and reminders professionally — ensuring visibility, trust, and conversions without being marked as spam.",
   };
 
   const processSteps = [
     {
       step: "01",
-      title: "Identify Suitable Media Outlets",
+      title: "Business Verification",
       description:
-        "We research and shortlist the best media platforms that align with your target audience and industry.",
-      icon: Newspaper,
+        "We help you get official WhatsApp Business API access with verified Meta Business approval.",
+      icon: ShieldCheck,
     },
     {
       step: "02",
-      title: "Write Compelling Press Releases",
+      title: "Setup & Template Creation",
       description:
-        "Our professional PR writers craft impactful, SEO-optimized press releases that catch editorial attention.",
-      icon: PenTool,
-    },
-    {
-      step: "03",
-      title: "Distribute to Verified News Platforms",
-      description:
-        "We distribute your stories through trusted news wires and publication networks for maximum visibility.",
+        "We design and submit pre-approved message templates aligned with your campaign goals.",
       icon: FileText,
     },
     {
-      step: "04",
-      title: "Monitor & Publish Coverage",
+      step: "03",
+      title: "Campaign Launch",
       description:
-        "Our team ensures successful publication and monitors all live media coverage for accuracy and reach.",
-      icon: TrendingUp,
+        "Execute automated or bulk message campaigns for promotions, updates, or reminders.",
+      icon: Rocket,
+    },
+    {
+      step: "04",
+      title: "Response Tracking",
+      description:
+        "Monitor user engagement, reply rates, and delivery performance with real-time analytics.",
+      icon: Activity,
     },
     {
       step: "05",
-      title: "Post-Publication Reporting",
+      title: "Optimization",
       description:
-        "We deliver detailed analytics reports with links, impressions, and engagement metrics for transparency.",
-      icon: BarChart,
+        "Refine templates and campaign flow based on audience behavior and conversion metrics.",
+      icon: TrendingUp,
     },
   ];
 
   const whyChooseUs = {
     tag: "Why Choose Cube Multimedia",
     points: [
-      "Access to verified online and offline media networks.",
-      "Content crafted by professional PR writers.",
-      "Coverage guaranteed in relevant categories.",
+      "Official Meta Business Partner integration.",
+      "Automated lead nurturing and support system.",
+      "Secure, encrypted, and spam-free messaging.",
+      "Perfect for customer retention and instant communication.",
     ],
   };
 
   const caseStudy = {
     tag: "Case Study Snapshot",
-    client: "Beyond Podcast",
-    challenge: "Needed online recognition for podcast launches.",
+    client: "Astrologer Aditya Narayan",
+    challenge: "Needed direct and personal communication with clients.",
     strategy:
-      "Released PR campaigns across digital and entertainment media for consistent online mentions.",
-    result:
-      "Featured in 15+ media outlets — boosting visibility, authority, and industry recognition.",
+      "Implemented automated appointment reminders and daily astrology insights using WhatsApp API.",
+    result: "Achieved 60% higher response rate and 25% more bookings.",
   };
 
   const faqs = [
     {
-      q: "Do you guarantee media coverage?",
-      a: "Yes, we guarantee coverage through our verified media and PR networks.",
+      q: "Is WhatsApp API safe?",
+      a: "Yes, it’s an official Meta-approved API with end-to-end encryption and data security.",
     },
     {
-      q: "Can I review content before publishing?",
-      a: "Absolutely — client approval is mandatory before any publication goes live.",
+      q: "Can I send promotional messages?",
+      a: "Yes, but only through pre-approved templates that comply with WhatsApp’s policies.",
+    },
+    {
+      q: "Can users reply?",
+      a: "Absolutely — all replies land directly in your connected business chat inbox.",
     },
   ];
 
   const cta = {
-    icon: Sparkles,
-    title: "Get Your Brand in the Headlines",
-    subtitle: "Start your PR journey with Cube Multimedia.",
-    buttonText: "Start My PR Campaign",
+    icon: MessageCircle,
+    title: "Engage Smarter with WhatsApp",
+    subtitle:
+      "Start your official WhatsApp API marketing with Cube Multimedia.",
+    buttonText: "Get Started Today",
   };
 
   return (
