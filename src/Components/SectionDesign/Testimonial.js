@@ -68,7 +68,7 @@ const TestimonialCarousel = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-900 via-red-800 to-rose-900 flex items-center justify-center p-6 relative overflow-hidden">
+    <div className="h-screen w-screen bg-gradient-to-br from-red-900 via-red-800 to-rose-900 flex items-center justify-center p-6 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-red-500/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
