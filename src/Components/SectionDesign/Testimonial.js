@@ -8,32 +8,32 @@ const TestimonialCarousel = () => {
   const testimonials = [
     {
       id: 1,
-      image: "https://picsum.photos/320/450?random=1",
+      image: "https://youtube.com/shorts/EPEENx-7fXY?si=4jhiDOZMk8rp4UU1",
       alt: "Client Testimonial 1",
     },
     {
       id: 2,
-      image: "https://picsum.photos/320/450?random=2",
+      image: "https://youtu.be/CiRQaYXh598?si=4sMQbDcKlDOi6fbI",
       alt: "Client Testimonial 2",
     },
     {
       id: 3,
-      image: "https://picsum.photos/320/450?random=3",
+      image: "https://vimeo.com/1099805489?fl=pl&fe=sh",
       alt: "Client Testimonial 3",
     },
     {
       id: 4,
-      image: "https://picsum.photos/320/450?random=4",
+      image: "https://vimeo.com/1099804593?fl=pl&fe=sh",
       alt: "Client Testimonial 4",
     },
     {
       id: 5,
-      image: "https://picsum.photos/320/450?random=5",
+      image: "https://youtu.be/2ovxeSQeaHo",
       alt: "Client Testimonial 5",
     },
     {
       id: 6,
-      image: "https://picsum.photos/320/450?random=6",
+      image: "https://youtu.be/QuvPBMIpQZY?si=h1EGWegnQ5qGSbxT",
       alt: "Client Testimonial 6",
     },
   ];
