@@ -42,14 +42,7 @@ function App() {
     <div className="App">
       <WrioNavbar />
       <WrioHeroSection />
-      {/* <Routes> */}
 
-      {/* <Route
-          path="/website-security"
-          element={<WebsiteMaintenanceSecurity />}
-        />
-        // New Routes Added Below
-      </Routes> */}
       <Footer />
     </div>
   );
