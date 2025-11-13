@@ -64,7 +64,7 @@ export default function ContactComponent() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {/* Contact Cards */}
+          {/* Email */}
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
             <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
               <Mail className="w-7 h-7 text-emerald-600" />
@@ -76,13 +76,14 @@ export default function ContactComponent() {
               Our team typically responds within 24 hours
             </p>
             <a
-              href="mailto:support@wrio.com"
+              href="mailto:mahendra@wrio.in"
               className="text-emerald-600 font-medium hover:text-emerald-700"
             >
-              support@wrio.com
+              mahendra@wrio.in
             </a>
           </div>
 
+          {/* Phone */}
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
             <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
               <Phone className="w-7 h-7 text-emerald-600" />
@@ -92,13 +93,14 @@ export default function ContactComponent() {
             </h3>
             <p className="text-gray-600 mb-4">Mon-Fri from 9am to 6pm</p>
             <a
-              href="tel:+1234567890"
+              href="tel:+917798982717"
               className="text-emerald-600 font-medium hover:text-emerald-700"
             >
-              +1 (234) 567-890
+              +91 7798982717
             </a>
           </div>
 
+          {/* Address */}
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
             <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
               <MapPin className="w-7 h-7 text-emerald-600" />
@@ -108,7 +110,8 @@ export default function ContactComponent() {
             </h3>
             <p className="text-gray-600 mb-4">Come say hello at our office</p>
             <p className="text-emerald-600 font-medium">
-              123 Business Plaza, Tech City
+              Devise Apps, Camellia Apartments, B402, Baner Pashan Link Rd,
+              Pashan, Pune, Maharashtra, India 411021
             </p>
           </div>
         </div>
@@ -166,7 +169,7 @@ export default function ContactComponent() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent outline-none transition text-white placeholder-white placeholder-opacity-70 backdrop-blur-sm"
-                  placeholder="+1 (234) 567-890"
+                  placeholder="+91 7798982717"
                 />
               </div>
 
