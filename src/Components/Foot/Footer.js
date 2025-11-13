@@ -13,7 +13,7 @@ const WrioFooter = () => {
               customized interface for seamless business operations.
             </p>
 
-            {/* Social Icons → fixed */}
+            {/* Social Icons */}
             <div className="flex space-x-4">
               <button
                 type="button"
@@ -74,42 +74,27 @@ const WrioFooter = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/about"
-                  className="text-white/90 hover:text-white text-sm"
-                >
+                <a href="/about" className="text-white/90 hover:text-white text-sm">
                   About Us
                 </a>
               </li>
               <li>
-                <a
-                  href="/features"
-                  className="text-white/90 hover:text-white text-sm"
-                >
+                <a href="/features" className="text-white/90 hover:text-white text-sm">
                   Features
                 </a>
               </li>
               <li>
-                <a
-                  href="/benefits"
-                  className="text-white/90 hover:text-white text-sm"
-                >
+                <a href="/benefits" className="text-white/90 hover:text-white text-sm">
                   Benefits
                 </a>
               </li>
               <li>
-                <a
-                  href="/pricing"
-                  className="text-white/90 hover:text-white text-sm"
-                >
+                <a href="/pricing" className="text-white/90 hover:text-white text-sm">
                   Pricing
                 </a>
               </li>
               <li>
-                <a
-                  href="/contact"
-                  className="text-white/90 hover:text-white text-sm"
-                >
+                <a href="/contact" className="text-white/90 hover:text-white text-sm">
                   Contact
                 </a>
               </li>
@@ -153,7 +138,7 @@ const WrioFooter = () => {
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
-                <span className="text-white/90 text-sm">+91 1234567890</span>
+                <span className="text-white/90 text-sm">+91 7798982717</span>
               </li>
 
               <li>
@@ -164,18 +149,13 @@ const WrioFooter = () => {
                   >
                     mahendra@wrio.in
                   </a>
-                  <a
-                    href="mailto:mahendrad.india@gmail.com"
-                    className="text-white/90 hover:text-white text-sm"
-                  >
-                    mahendrad.india@gmail.com
-                  </a>
                 </div>
               </li>
 
               <li className="flex items-start gap-2">
                 <span className="text-white/90 text-sm">
-                  Mumbai, Maharashtra, India
+                  Devise Apps, Camellia Apartments, B402, Baner Pashan Link Rd,
+                  Pashan, Pune, Maharashtra, India 411021
                 </span>
               </li>
             </ul>
@@ -192,22 +172,13 @@ const WrioFooter = () => {
             </p>
 
             <div className="flex gap-6">
-              <a
-                href="/privacy"
-                className="text-white/80 hover:text-white text-sm"
-              >
+              <a href="/privacy" className="text-white/80 hover:text-white text-sm">
                 Privacy Policy
               </a>
-              <a
-                href="/terms"
-                className="text-white/80 hover:text-white text-sm"
-              >
+              <a href="/terms" className="text-white/80 hover:text-white text-sm">
                 Terms of Service
               </a>
-              <a
-                href="/cookies"
-                className="text-white/80 hover:text-white text-sm"
-              >
+              <a href="/cookies" className="text-white/80 hover:text-white text-sm">
                 Cookie Policy
               </a>
             </div>
