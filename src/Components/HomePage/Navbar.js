@@ -1,153 +1,265 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../LanguageContext";
+import { Info, Globe } from "lucide-react";
+
+const LanguageDropdown = ({ language, onLanguageChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const languages = [
+    { code: "en", label: "English", flag: "🇬🇧" },
+    { code: "hi", label: "हिंदी", flag: "🇮🇳" },
+    { code: "mr", label: "मराठी", flag: "🇮🇳" },
+  ];
+
+  const currentLang = languages.find((lang) => lang.code === language);
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        onBlur={() => setTimeout(() => setIsOpen(false), 200)}
+        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-gray-200 hover:border-green-500 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        <Globe className="w-4 h-4 text-gray-600" />
+        <span className="text-sm font-medium text-gray-700">
+          {currentLang?.flag} {currentLang?.label}
+        </span>
+        <svg
+          className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-50">
+          {languages.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => {
+                onLanguageChange(lang.code);
+                setIsOpen(false);
+              }}
+              className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors ${
+                language === lang.code
+                  ? "bg-green-50 text-green-700 font-medium"
+                  : "text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              <span className="text-lg">{lang.flag}</span>
+              <span>{lang.label}</span>
+              {language === lang.code && (
+                <svg
+                  className="w-4 h-4 ml-auto text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const WrioNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showFeatComment, setShowFeatComment] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const onLanguageChange = (code) => {
+    setLanguage(code);
+    setMobileMenuOpen(false);
+  };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md transition-all duration-300">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <img
-              src="https://res.cloudinary.com/de4ks8mkh/image/upload/v1761988724/Screenshot_2025-11-01_144833_owakse.png"
-              alt="WRIO Logo"
-              className="h-8 w-auto"
-            />
-            <div className="hidden sm:block ml-2 text-1xl text-gray-600 border-l border-gray-300 pl-2">
-              Smarter Order Booking
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <span className="text-white font-black text-xl">W</span>
             </div>
-          </div>
+            <div className="flex flex-col">
+              <span className="font-black text-xl bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                WRIO
+              </span>
+              <span className="text-xs text-gray-500 -mt-1 font-medium">
+                {t("tagline")}
+              </span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {/* ✅ Added Home Route */}
+          <div className="hidden lg:flex items-center space-x-1">
             <Link
               to="/"
-              className="text-gray-700 hover:text-green-600 text-md font-medium transition-colors"
+              className="px-4 py-2 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 text-sm font-medium"
             >
-              Home
+              {t("home")}
             </Link>
-
-            <Link
+            {/* <Link
               to="/about"
-              className="text-gray-700 hover:text-green-600 text-md font-medium transition-colors"
+              className="px-4 py-2 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 text-sm font-medium"
             >
-              About
-            </Link>
-
-            <Link
-              to="/feature"
-              className="text-gray-700 hover:text-green-600 text-md font-medium transition-colors"
-            >
-              Features
-            </Link>
-
-            <Link
-              to="/about#benefits"
-              className="text-gray-700 hover:text-green-600 text-md font-medium transition-colors"
-            >
-              Benefits
-            </Link>
+              {t("about")}
+            </Link> */}
 
             <Link
               to="/contact"
-              className="text-gray-700 hover:text-green-600 text-md font-medium transition-colors"
+              className="px-4 py-2 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 text-sm font-medium"
             >
-              Contact
+              {t("contact")}
             </Link>
+          </div>
 
-            <button className="px-5 py-2 bg-green-600 text-white hover:bg-green-700 rounded-lg text-md font-medium transition-colors shadow-sm">
-              Get Started
-            </button>
-          </nav>
+          {/* Right Section */}
+          <div className="hidden lg:flex items-center gap-3">
+            {/* Language Dropdown */}
+            <LanguageDropdown
+              language={language}
+              onLanguageChange={onLanguageChange}
+            />
+
+            <Link
+              to="/get-started"
+              className="px-5 py-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+            >
+              {t("getStarted")}
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 p-2"
-            >
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden text-gray-700 p-2"
+            aria-expanded={mobileMenuOpen}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileMenuOpen ? (
               <svg
                 className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                {mobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
-            </button>
-          </div>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-4 py-3 space-y-3">
-            {/* ✅ Added Home Route in Mobile Menu */}
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-gray-100">
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-left text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
             >
-              Home
+              {t("home")}
             </Link>
-
-            <Link
+            {/* <Link
               to="/about"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-left text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
             >
-              About
-            </Link>
-
-            <Link
-              to="/feature"
+              {t("about")}
+            </Link> */}
+            {/* <div className="flex items-center gap-2 py-2">
+              <Link
+                to="/features"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
+              >
+                {t("features")}
+              </Link>
+              <button
+                onClick={() => alert(t("features_comment"))}
+                className="p-1 rounded-full text-gray-500 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                aria-label={t("features_comment")}
+                title={t("features_comment")}
+              >
+                <Info className="w-4 h-4" />
+              </button>
+            </div> */}
+            {/* <Link
+              to="/benefits"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-left text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
             >
-              Features
-            </Link>
-
-            <Link
-              to="/about#benefits"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-left text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
-            >
-              Benefits
-            </Link>
-
+              {t("benefits")}
+            </Link> */}
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-left text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
             >
-              Contact
+              {t("contact")}
             </Link>
 
-            <button className="w-full px-5 py-2 bg-green-600 text-white hover:bg-green-700 rounded-lg text-sm font-medium shadow-sm">
-              Get Started
-            </button>
+            {/* Mobile Language Section */}
+            <div className="border-t border-gray-200 pt-3 mt-3">
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                Choose Language
+              </p>
+              <LanguageDropdown
+                language={language}
+                onLanguageChange={onLanguageChange}
+              />
+            </div>
+
+            <Link
+              to="/get-started"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full px-5 py-2 bg-green-600 text-white hover:bg-green-700 rounded-lg text-sm font-medium shadow-sm mt-3 block text-center"
+            >
+              {t("getStarted")}
+            </Link>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </div>
+    </nav>
   );
 };
 

@@ -22,297 +22,274 @@ import {
   Eye,
   Database,
 } from "lucide-react";
+import { useLanguage } from "../../LanguageContext";
 
 export default function WrioFeatures() {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("all");
   const [hoveredFeature, setHoveredFeature] = useState(null);
 
   const categories = [
-    { id: "all", name: "All Features", icon: Layers },
-    { id: "ordering", name: "Ordering", icon: ShoppingCart },
-    { id: "distribution", name: "Distribution", icon: Package },
-    { id: "analytics", name: "Analytics", icon: BarChart3 },
-    { id: "management", name: "Management", icon: Settings },
+    { id: "all", nameKey: "features_cat_all", icon: Layers },
+    { id: "ordering", nameKey: "features_cat_ordering", icon: ShoppingCart },
+    { id: "distribution", nameKey: "features_cat_distribution", icon: Package },
+    { id: "analytics", nameKey: "features_cat_analytics", icon: BarChart3 },
+    { id: "management", nameKey: "features_cat_management", icon: Settings },
   ];
 
   const features = [
     {
       category: "ordering",
       icon: ShoppingCart,
-      title: "B2B & B2C Ordering",
-      description:
-        "Unified platform supporting both business-to-business and direct customer orders with customizable workflows.",
-      benefits: [
-        "Dual-mode ordering",
-        "Custom order forms",
-        "Bulk order support",
-        "Quick reorder options",
+      titleKey: "feat_ordering_b2b_title",
+      descriptionKey: "feat_ordering_b2b_desc",
+      benefitsKeys: [
+        "feat_ordering_b2b_b1",
+        "feat_ordering_b2b_b2",
+        "feat_ordering_b2b_b3",
+        "feat_ordering_b2b_b4",
       ],
       color: "from-green-500 to-emerald-500",
     },
     {
       category: "ordering",
       icon: FileText,
-      title: "Digital Catalogs",
-      description:
-        "Create and manage product catalogs with rich media, descriptions, and real-time inventory sync.",
-      benefits: [
-        "Unlimited products",
-        "Image & video support",
-        "Category management",
-        "Search & filters",
+      titleKey: "feat_catalogs_title",
+      descriptionKey: "feat_catalogs_desc",
+      benefitsKeys: [
+        "feat_catalogs_b1",
+        "feat_catalogs_b2",
+        "feat_catalogs_b3",
+        "feat_catalogs_b4",
       ],
       color: "from-emerald-500 to-teal-500",
     },
     {
       category: "ordering",
       icon: DollarSign,
-      title: "Dynamic Pricing",
-      description:
-        "Set custom pricing rules for different partners, regions, or volumes with automatic discount application.",
-      benefits: [
-        "Tier-based pricing",
-        "Partner-specific rates",
-        "Volume discounts",
-        "Promotional pricing",
+      titleKey: "feat_dynamic_pricing_title",
+      descriptionKey: "feat_dynamic_pricing_desc",
+      benefitsKeys: [
+        "feat_dynamic_pricing_b1",
+        "feat_dynamic_pricing_b2",
+        "feat_dynamic_pricing_b3",
+        "feat_dynamic_pricing_b4",
       ],
       color: "from-teal-500 to-green-500",
     },
     {
       category: "ordering",
       icon: Clock,
-      title: "Order Approval Workflow",
-      description:
-        "Configurable approval chains ensuring orders are reviewed and authorized before processing.",
-      benefits: [
-        "Multi-level approvals",
-        "Custom workflows",
-        "Auto-approval rules",
-        "Rejection handling",
+      titleKey: "feat_approval_title",
+      descriptionKey: "feat_approval_desc",
+      benefitsKeys: [
+        "feat_approval_b1",
+        "feat_approval_b2",
+        "feat_approval_b3",
+        "feat_approval_b4",
       ],
       color: "from-green-600 to-emerald-600",
     },
     {
       category: "distribution",
       icon: Layers,
-      title: "Multi-Level Distribution",
-      description:
-        "Manage complex distribution hierarchies from manufacturers to distributors to retailers seamlessly.",
-      benefits: [
-        "Unlimited hierarchy levels",
-        "Partner onboarding",
-        "Territory mapping",
-        "Channel management",
+      titleKey: "feat_multi_level_dist_title",
+      descriptionKey: "feat_multi_level_dist_desc",
+      benefitsKeys: [
+        "feat_multi_level_dist_b1",
+        "feat_multi_level_dist_b2",
+        "feat_multi_level_dist_b3",
+        "feat_multi_level_dist_b4",
       ],
       color: "from-green-500 to-emerald-500",
     },
     {
       category: "distribution",
       icon: Package,
-      title: "Inventory Tracking",
-      description:
-        "Real-time inventory visibility across all locations with automated stock alerts and replenishment.",
-      benefits: [
-        "Live stock levels",
-        "Low stock alerts",
-        "Stock transfer tracking",
-        "Batch management",
+      titleKey: "feat_inventory_title",
+      descriptionKey: "feat_inventory_desc",
+      benefitsKeys: [
+        "feat_inventory_b1",
+        "feat_inventory_b2",
+        "feat_inventory_b3",
+        "feat_inventory_b4",
       ],
       color: "from-emerald-500 to-teal-500",
     },
     {
       category: "distribution",
       icon: MapPin,
-      title: "Territory Management",
-      description:
-        "Define and manage sales territories, assign partners, and track regional performance.",
-      benefits: [
-        "Geographic mapping",
-        "Territory assignment",
-        "Regional analytics",
-        "Coverage tracking",
+      titleKey: "feat_territory_title",
+      descriptionKey: "feat_territory_desc",
+      benefitsKeys: [
+        "feat_territory_b1",
+        "feat_territory_b2",
+        "feat_territory_b3",
+        "feat_territory_b4",
       ],
       color: "from-teal-500 to-green-500",
     },
     {
       category: "distribution",
       icon: RefreshCw,
-      title: "Order Fulfillment",
-      description:
-        "Streamline order processing from confirmation to delivery with automated status updates.",
-      benefits: [
-        "Order tracking",
-        "Status automation",
-        "Dispatch management",
-        "Delivery confirmation",
+      titleKey: "feat_fulfillment_title",
+      descriptionKey: "feat_fulfillment_desc",
+      benefitsKeys: [
+        "feat_fulfillment_b1",
+        "feat_fulfillment_b2",
+        "feat_fulfillment_b3",
+        "feat_fulfillment_b4",
       ],
       color: "from-green-600 to-emerald-600",
     },
     {
       category: "analytics",
       icon: BarChart3,
-      title: "Smart Dashboards",
-      description:
-        "Comprehensive dashboards providing real-time insights into sales, orders, and business performance.",
-      benefits: [
-        "Real-time metrics",
-        "Custom widgets",
-        "Visual analytics",
-        "Export reports",
+      titleKey: "feat_dashboards_title",
+      descriptionKey: "feat_dashboards_desc",
+      benefitsKeys: [
+        "feat_dashboards_b1",
+        "feat_dashboards_b2",
+        "feat_dashboards_b3",
+        "feat_dashboards_b4",
       ],
       color: "from-green-500 to-emerald-500",
     },
     {
       category: "analytics",
       icon: TrendingUp,
-      title: "Sales Analytics",
-      description:
-        "Deep dive into sales trends, partner performance, and product analytics to drive growth.",
-      benefits: [
-        "Sales trends",
-        "Partner rankings",
-        "Product performance",
-        "Revenue forecasting",
+      titleKey: "feat_sales_analytics_title",
+      descriptionKey: "feat_sales_analytics_desc",
+      benefitsKeys: [
+        "feat_sales_analytics_b1",
+        "feat_sales_analytics_b2",
+        "feat_sales_analytics_b3",
+        "feat_sales_analytics_b4",
       ],
       color: "from-emerald-500 to-teal-500",
     },
     {
       category: "analytics",
       icon: Eye,
-      title: "Business Intelligence",
-      description:
-        "Advanced reporting and analytics to understand customer behavior and market opportunities.",
-      benefits: [
-        "Custom reports",
-        "Data visualization",
-        "Trend analysis",
-        "Predictive insights",
-      ],
+      titleKey: "feat_bi_title",
+      descriptionKey: "feat_bi_desc",
+      benefitsKeys: ["feat_bi_b1", "feat_bi_b2", "feat_bi_b3", "feat_bi_b4"],
       color: "from-teal-500 to-green-500",
     },
     {
       category: "analytics",
       icon: Database,
-      title: "Data Export",
-      description:
-        "Export all your data in multiple formats for external analysis or record-keeping.",
-      benefits: [
-        "Multiple formats",
-        "Scheduled exports",
-        "Bulk downloads",
-        "API access",
+      titleKey: "feat_data_export_title",
+      descriptionKey: "feat_data_export_desc",
+      benefitsKeys: [
+        "feat_data_export_b1",
+        "feat_data_export_b2",
+        "feat_data_export_b3",
+        "feat_data_export_b4",
       ],
       color: "from-green-600 to-emerald-600",
     },
     {
       category: "management",
       icon: Users,
-      title: "Partner Management",
-      description:
-        "Centralized system to manage all your business partners, distributors, and retail networks.",
-      benefits: [
-        "Partner profiles",
-        "Document storage",
-        "Credit management",
-        "Performance tracking",
+      titleKey: "feat_partner_mgmt_title",
+      descriptionKey: "feat_partner_mgmt_desc",
+      benefitsKeys: [
+        "feat_partner_mgmt_b1",
+        "feat_partner_mgmt_b2",
+        "feat_partner_mgmt_b3",
+        "feat_partner_mgmt_b4",
       ],
       color: "from-green-500 to-emerald-500",
     },
     {
       category: "management",
       icon: Lock,
-      title: "Role-Based Access",
-      description:
-        "Secure access control with customizable roles and permissions for different user types.",
-      benefits: [
-        "Custom roles",
-        "Permission control",
-        "User management",
-        "Access logs",
+      titleKey: "feat_rbac_title",
+      descriptionKey: "feat_rbac_desc",
+      benefitsKeys: [
+        "feat_rbac_b1",
+        "feat_rbac_b2",
+        "feat_rbac_b3",
+        "feat_rbac_b4",
       ],
       color: "from-emerald-500 to-teal-500",
     },
     {
       category: "management",
       icon: Bell,
-      title: "Smart Notifications",
-      description:
-        "Automated alerts and notifications keeping everyone informed about important events.",
-      benefits: [
-        "Real-time alerts",
-        "Email notifications",
-        "SMS integration",
-        "Custom triggers",
+      titleKey: "feat_notifications_title",
+      descriptionKey: "feat_notifications_desc",
+      benefitsKeys: [
+        "feat_notifications_b1",
+        "feat_notifications_b2",
+        "feat_notifications_b3",
+        "feat_notifications_b4",
       ],
       color: "from-teal-500 to-green-500",
     },
     {
       category: "management",
       icon: Settings,
-      title: "Customization",
-      description:
-        "Tailor the platform to your business needs with extensive configuration options.",
-      benefits: [
-        "Workflow customization",
-        "Branding options",
-        "Field configuration",
-        "Template design",
+      titleKey: "feat_customization_title",
+      descriptionKey: "feat_customization_desc",
+      benefitsKeys: [
+        "feat_customization_b1",
+        "feat_customization_b2",
+        "feat_customization_b3",
+        "feat_customization_b4",
       ],
       color: "from-green-600 to-emerald-600",
     },
     {
       category: "ordering",
       icon: Smartphone,
-      title: "Mobile-First Design",
-      description:
-        "Fully responsive platform optimized for mobile devices, enabling orders from anywhere.",
-      benefits: [
-        "Native app experience",
-        "Offline capability",
-        "Touch-optimized",
-        "Cross-device sync",
+      titleKey: "feat_mobile_title",
+      descriptionKey: "feat_mobile_desc",
+      benefitsKeys: [
+        "feat_mobile_b1",
+        "feat_mobile_b2",
+        "feat_mobile_b3",
+        "feat_mobile_b4",
       ],
       color: "from-green-500 to-emerald-500",
     },
     {
       category: "management",
       icon: Cloud,
-      title: "Cloud Infrastructure",
-      description:
-        "Built on reliable cloud infrastructure with automatic backups and 99.9% uptime guarantee.",
-      benefits: [
-        "Zero maintenance",
-        "Auto backups",
-        "Scalable resources",
-        "Global CDN",
+      titleKey: "feat_cloud_title",
+      descriptionKey: "feat_cloud_desc",
+      benefitsKeys: [
+        "feat_cloud_b1",
+        "feat_cloud_b2",
+        "feat_cloud_b3",
+        "feat_cloud_b4",
       ],
       color: "from-emerald-500 to-teal-500",
     },
     {
       category: "management",
       icon: Shield,
-      title: "Enterprise Security",
-      description:
-        "Bank-grade security with data encryption, secure authentication, and compliance standards.",
-      benefits: [
-        "Data encryption",
-        "SSL/TLS security",
-        "Regular audits",
-        "GDPR compliant",
+      titleKey: "feat_security_title",
+      descriptionKey: "feat_security_desc",
+      benefitsKeys: [
+        "feat_security_b1",
+        "feat_security_b2",
+        "feat_security_b3",
+        "feat_security_b4",
       ],
       color: "from-teal-500 to-green-500",
     },
     {
       category: "analytics",
       icon: Zap,
-      title: "Real-Time Sync",
-      description:
-        "Instant data synchronization across all devices and locations ensuring everyone has latest information.",
-      benefits: [
-        "Instant updates",
-        "Conflict resolution",
-        "Multi-device sync",
-        "Offline queue",
+      titleKey: "feat_realtime_title",
+      descriptionKey: "feat_realtime_desc",
+      benefitsKeys: [
+        "feat_realtime_b1",
+        "feat_realtime_b2",
+        "feat_realtime_b3",
+        "feat_realtime_b4",
       ],
       color: "from-green-600 to-emerald-600",
     },
@@ -324,10 +301,10 @@ export default function WrioFeatures() {
       : features.filter((f) => f.category === activeCategory);
 
   const highlights = [
-    { icon: CheckCircle, text: "No IT Infrastructure Required" },
-    { icon: Zap, text: "Deploy in Minutes, Not Months" },
-    { icon: Shield, text: "Enterprise-Grade Security" },
-    { icon: RefreshCw, text: "Regular Feature Updates" },
+    { icon: CheckCircle, textKey: "features_highlight_no_infra" },
+    { icon: Zap, textKey: "features_highlight_deploy" },
+    { icon: Shield, textKey: "features_highlight_security" },
+    { icon: RefreshCw, textKey: "features_highlight_updates" },
   ];
 
   return (
@@ -337,18 +314,17 @@ export default function WrioFeatures() {
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
-              Powerful Features
+              {t("features_label_powerful")}
             </span>
           </div>
           <h1 className="text-5xl font-bold text-slate-900 mb-6">
-            Everything You Need to{" "}
+            {t("features_heading_prefix")}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
-              Scale Your Business
+              {t("features_heading_highlight")}
             </span>
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Comprehensive tools designed for modern B2B and B2C operations.
-            Simple to use, powerful to grow with.
+            {t("features_subheading")}
           </p>
         </div>
 
@@ -363,7 +339,7 @@ export default function WrioFeatures() {
               >
                 <Icon className="w-8 h-8 text-green-600 mx-auto mb-2" />
                 <p className="text-sm font-semibold text-slate-700">
-                  {highlight.text}
+                  {t(highlight.textKey)}
                 </p>
               </div>
             );
@@ -385,7 +361,7 @@ export default function WrioFeatures() {
                 }`}
               >
                 <Icon className="w-5 h-5" />
-                {category.name}
+                {t(category.nameKey)}
               </button>
             );
           })}
@@ -413,17 +389,17 @@ export default function WrioFeatures() {
                 </div>
 
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  {feature.title}
+                  {t(feature.titleKey)}
                 </h3>
                 <p className="text-slate-600 mb-4 leading-relaxed">
-                  {feature.description}
+                  {t(feature.descriptionKey)}
                 </p>
 
                 <div className="space-y-2">
-                  {feature.benefits.map((benefit, i) => (
+                  {feature.benefitsKeys.map((bk, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex-shrink-0"></div>
-                      <span className="text-sm text-slate-700">{benefit}</span>
+                      <span className="text-sm text-slate-700">{t(bk)}</span>
                     </div>
                   ))}
                 </div>
@@ -434,19 +410,16 @@ export default function WrioFeatures() {
 
         {/* Bottom CTA */}
         <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-3xl p-12 text-white text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Experience These Features?
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">{t("features_cta_title")}</h2>
           <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-            Join hundreds of businesses already streamlining their operations
-            with Wrio
+            {t("features_cta_sub")}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <button className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              Start Free Trial
+              {t("features_cta_primary")}
             </button>
             <button className="bg-green-500/20 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold border-2 border-white/30 hover:bg-green-500/30 transition-all duration-300 hover:-translate-y-1">
-              Watch Demo
+              {t("features_cta_secondary")}
             </button>
           </div>
         </div>

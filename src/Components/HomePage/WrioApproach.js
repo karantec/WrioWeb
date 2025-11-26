@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  Store,
-  Building2,
   Zap,
   Smartphone,
   BookOpen,
@@ -11,44 +9,47 @@ import {
   FileBarChart,
   PackageCheck,
 } from "lucide-react";
+import { useLanguage } from "../../LanguageContext";
 
 export default function WrioApproach() {
+  const { t } = useLanguage();
+
   const smallBusiness = {
-    title: "For Small Businesses",
-    features: [
-      "Create your store in minutes",
-      "No tech knowledge needed",
-      "Simple order-taking app",
-      "Payments, menu, customers - everything built in",
+    titleKey: "approach_small_title",
+    featuresKeys: [
+      "approach_small_f1",
+      "approach_small_f2",
+      "approach_small_f3",
+      "approach_small_f4",
     ],
-    cta: "Start your store",
+    ctaKey: "approach_small_cta",
     ctaStyle: "filled",
   };
 
   const franchise = {
-    title: "For Franchise Brands",
-    features: [
-      "Multi-store dashboard",
-      "Head office controls",
-      "Outlet-wise reports",
-      "Purchase/stock flow",
+    titleKey: "approach_franchise_title",
+    featuresKeys: [
+      "approach_franchise_f1",
+      "approach_franchise_f2",
+      "approach_franchise_f3",
+      "approach_franchise_f4",
     ],
-    cta: "Book franchise demo",
+    ctaKey: "approach_franchise_cta",
     ctaStyle: "outlined",
   };
 
   const smallBusinessFeatures = [
-    { icon: Zap, text: "Quick setup" },
-    { icon: Smartphone, text: "Order-taking on phone/tablet" },
-    { icon: BookOpen, text: "Digital menu" },
-    { icon: Users, text: "Customer tracking" },
+    { icon: Zap, textKey: "approach_sb_feat_qsetup" },
+    { icon: Smartphone, textKey: "approach_sb_feat_orderphone" },
+    { icon: BookOpen, textKey: "approach_sb_feat_menu" },
+    { icon: Users, textKey: "approach_sb_feat_customers" },
   ];
 
   const franchiseFeatures = [
-    { icon: LayoutDashboard, text: "Multi-store dashboard" },
-    { icon: Settings, text: "Head office controls" },
-    { icon: FileBarChart, text: "Outlet-wise reports" },
-    { icon: PackageCheck, text: "Purchase/stock flow" },
+    { icon: LayoutDashboard, textKey: "approach_fr_feat_dashboard" },
+    { icon: Settings, textKey: "approach_fr_feat_headcontrols" },
+    { icon: FileBarChart, textKey: "approach_fr_feat_reports" },
+    { icon: PackageCheck, textKey: "approach_fr_feat_stock" },
   ];
 
   return (
@@ -59,10 +60,10 @@ export default function WrioApproach() {
           {/* Small Business Column */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              For Small Businesses
+              {t(smallBusiness.titleKey)}
             </h2>
             <ul className="space-y-3 mb-8">
-              {smallBusiness.features.map((feature, idx) => (
+              {smallBusiness.featuresKeys.map((key, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <svg
                     className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0"
@@ -77,22 +78,22 @@ export default function WrioApproach() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-600">{feature}</span>
+                  <span className="text-gray-600">{t(key)}</span>
                 </li>
               ))}
             </ul>
             <button className="px-6 py-3 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition-colors">
-              Start your store
+              {t(smallBusiness.ctaKey)}
             </button>
           </div>
 
           {/* Franchise Column */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              For Franchise Brands
+              {t(franchise.titleKey)}
             </h2>
             <ul className="space-y-3 mb-8">
-              {franchise.features.map((feature, idx) => (
+              {franchise.featuresKeys.map((key, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <svg
                     className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0"
@@ -107,12 +108,12 @@ export default function WrioApproach() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-600">{feature}</span>
+                  <span className="text-gray-600">{t(key)}</span>
                 </li>
               ))}
             </ul>
             <button className="px-6 py-3 bg-white text-gray-800 rounded-lg font-medium border-2 border-gray-300 hover:border-teal-600 hover:text-teal-600 transition-colors">
-              Book franchise demo
+              {t(franchise.ctaKey)}
             </button>
           </div>
         </div>
@@ -125,7 +126,7 @@ export default function WrioApproach() {
           {/* Small Business Features */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-8">
-              Features for Small Businesses
+              {t("approach_sb_features_title")}
             </h2>
             <ul className="space-y-4">
               {smallBusinessFeatures.map((feature, idx) => {
@@ -135,7 +136,7 @@ export default function WrioApproach() {
                     <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-5 h-5 text-teal-600" />
                     </div>
-                    <span className="text-gray-700">{feature.text}</span>
+                    <span className="text-gray-700">{t(feature.textKey)}</span>
                   </li>
                 );
               })}
@@ -145,7 +146,7 @@ export default function WrioApproach() {
           {/* Franchise Features */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-8">
-              Features for Franchise Chains
+              {t("approach_fr_features_title")}
             </h2>
             <ul className="space-y-4">
               {franchiseFeatures.map((feature, idx) => {
@@ -155,7 +156,7 @@ export default function WrioApproach() {
                     <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-5 h-5 text-teal-600" />
                     </div>
-                    <span className="text-gray-700">{feature.text}</span>
+                    <span className="text-gray-700">{t(feature.textKey)}</span>
                   </li>
                 );
               })}
