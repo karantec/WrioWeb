@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+// src/components/WrioNavbar.jsx
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { useLanguage } from "../../LanguageContext";
-import { Info, Globe } from "lucide-react";
 
+import { Globe, Info } from "lucide-react";
+import { useLanguage } from "../../LanguageContext";
+
+/* LanguageDropdown component */
 const LanguageDropdown = ({ language, onLanguageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef(null);
 
   const languages = [
     { code: "en", label: "English", flag: "🇬🇧" },
@@ -12,20 +16,41 @@ const LanguageDropdown = ({ language, onLanguageChange }) => {
     { code: "mr", label: "मराठी", flag: "🇮🇳" },
   ];
 
-  const currentLang = languages.find((lang) => lang.code === language);
+  const currentLang =
+    languages.find((lang) => lang.code === language) || languages[0];
+
+  // Click outside -> close
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Escape to close
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === "Escape") setIsOpen(false);
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
-    <div className="relative">
+    <div ref={wrapperRef} className="relative">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        onBlur={() => setTimeout(() => setIsOpen(false), 200)}
-        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-gray-200 hover:border-green-500 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        onClick={() => setIsOpen((s) => !s)}
         aria-expanded={isOpen}
         aria-haspopup="true"
+        type="button"
+        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-gray-200 hover:border-green-500 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
       >
         <Globe className="w-4 h-4 text-gray-600" />
         <span className="text-sm font-medium text-gray-700">
-          {currentLang?.flag} {currentLang?.label}
+          {currentLang.flag} {currentLang.label}
         </span>
         <svg
           className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
@@ -49,7 +74,9 @@ const LanguageDropdown = ({ language, onLanguageChange }) => {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={() => {
+              type="button"
+              // onMouseDown ensures it fires before blur; click-outside is also present for safety.
+              onMouseDown={() => {
                 onLanguageChange(lang.code);
                 setIsOpen(false);
               }}
@@ -82,13 +109,14 @@ const LanguageDropdown = ({ language, onLanguageChange }) => {
   );
 };
 
+/* WrioNavbar component */
 const WrioNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showFeatComment, setShowFeatComment] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
   const onLanguageChange = (code) => {
     setLanguage(code);
+    // close mobile menu if open (useful when switching on mobile)
     setMobileMenuOpen(false);
   };
 
@@ -119,12 +147,6 @@ const WrioNavbar = () => {
             >
               {t("home")}
             </Link>
-            {/* <Link
-              to="/about"
-              className="px-4 py-2 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 text-sm font-medium"
-            >
-              {t("about")}
-            </Link> */}
 
             <Link
               to="/contact"
@@ -136,7 +158,6 @@ const WrioNavbar = () => {
 
           {/* Right Section */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Language Dropdown */}
             <LanguageDropdown
               language={language}
               onLanguageChange={onLanguageChange}
@@ -199,37 +220,7 @@ const WrioNavbar = () => {
             >
               {t("home")}
             </Link>
-            {/* <Link
-              to="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-left text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
-            >
-              {t("about")}
-            </Link> */}
-            {/* <div className="flex items-center gap-2 py-2">
-              <Link
-                to="/features"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
-              >
-                {t("features")}
-              </Link>
-              <button
-                onClick={() => alert(t("features_comment"))}
-                className="p-1 rounded-full text-gray-500 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                aria-label={t("features_comment")}
-                title={t("features_comment")}
-              >
-                <Info className="w-4 h-4" />
-              </button>
-            </div> */}
-            {/* <Link
-              to="/benefits"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-left text-gray-700 hover:text-green-600 py-2 text-sm font-medium"
-            >
-              {t("benefits")}
-            </Link> */}
+
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
