@@ -9,6 +9,7 @@ import WrioFeatures from "./Components/HomePage/WrioFeatures";
 import ContactComponent from "./Components/HomePage/Contact";
 import ScrollToTop from "./Components/HomePage/ScrollTop";
 import { LanguageProvider } from "./LanguageContext";
+import WrioCarousel from "./Components/HomePage/WrioFeatures";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             {/* <Route path="/about" element={<WrioAboutUs />} /> */}
-            {/* <Route path="/feature" element={<WrioFeatures />} /> */}
+            <Route path="/feature" element={<WrioCarousel />} />
             <Route path="/contact" element={<ContactComponent />} />
           </Routes>
         </div>

@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../../LanguageContext";
 
 const WrioHeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const { t, language, setLanguage } = useLanguage();
+
+  // Modal state
+  const [showVideoModal, setShowVideoModal] = useState(false);
+  const modalRef = useRef(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -13,6 +17,27 @@ const WrioHeroSection = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  // Close modal on ESC
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") setShowVideoModal(false);
+    };
+    if (showVideoModal) document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [showVideoModal]);
+
+  // Click-outside to close
+  useEffect(() => {
+    const onMouseDown = (e) => {
+      if (!showVideoModal) return;
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setShowVideoModal(false);
+      }
+    };
+    document.addEventListener("mousedown", onMouseDown);
+    return () => document.removeEventListener("mousedown", onMouseDown);
+  }, [showVideoModal]);
 
   const features = [
     {
@@ -68,7 +93,7 @@ const WrioHeroSection = () => {
       </div>
 
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-20 right-20 w-96 h-96 bg-teal-100 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-20 w-80 h-80 bg-emerald-100 rounded-full blur-3xl"></div>
       </div>
@@ -172,7 +197,12 @@ const WrioHeroSection = () => {
                   />
                 </svg>
               </button>
-              <button className="group px-8 py-4 bg-white text-gray-800 rounded-xl font-semibold text-lg border-2 border-gray-200 hover:border-teal-400 hover:text-teal-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+
+              {/* Watch Demo opens modal */}
+              <button
+                onClick={() => setShowVideoModal(true)}
+                className="group px-8 py-4 bg-white text-gray-800 rounded-xl font-semibold text-lg border-2 border-gray-200 hover:border-teal-400 hover:text-teal-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-md"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -455,6 +485,37 @@ const WrioHeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideoModal && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999] px-4">
+          <div
+            ref={modalRef}
+            className="bg-white rounded-2xl overflow-hidden shadow-2xl max-w-3xl w-full relative animate-scaleIn"
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl z-20"
+              onClick={() => setShowVideoModal(false)}
+              aria-label="Close video"
+            >
+              ✕
+            </button>
+
+            {/* YouTube iframe */}
+            <div className="w-full h-64 sm:h-96">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/r9V188CXua8?autoplay=1&rel=0"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

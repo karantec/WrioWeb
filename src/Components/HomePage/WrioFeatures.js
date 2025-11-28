@@ -1,429 +1,222 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  ShoppingCart,
-  Users,
-  Cloud,
-  Lock,
-  BarChart3,
-  Bell,
-  Package,
+  ChevronLeft,
+  ChevronRight,
   Smartphone,
-  DollarSign,
-  FileText,
-  Settings,
-  Layers,
-  TrendingUp,
-  Shield,
   Zap,
-  RefreshCw,
+  ShoppingCart,
+  Mic,
+  Globe,
+  Receipt,
   MapPin,
-  CheckCircle,
-  Clock,
-  Eye,
-  Database,
+  Megaphone,
+  Package,
 } from "lucide-react";
-import { useLanguage } from "../../LanguageContext";
 
-export default function WrioFeatures() {
-  const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [hoveredFeature, setHoveredFeature] = useState(null);
-
-  const categories = [
-    { id: "all", nameKey: "features_cat_all", icon: Layers },
-    { id: "ordering", nameKey: "features_cat_ordering", icon: ShoppingCart },
-    { id: "distribution", nameKey: "features_cat_distribution", icon: Package },
-    { id: "analytics", nameKey: "features_cat_analytics", icon: BarChart3 },
-    { id: "management", nameKey: "features_cat_management", icon: Settings },
-  ];
+const WrioCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const features = [
     {
-      category: "ordering",
-      icon: ShoppingCart,
-      titleKey: "feat_ordering_b2b_title",
-      descriptionKey: "feat_ordering_b2b_desc",
-      benefitsKeys: [
-        "feat_ordering_b2b_b1",
-        "feat_ordering_b2b_b2",
-        "feat_ordering_b2b_b3",
-        "feat_ordering_b2b_b4",
-      ],
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      category: "ordering",
-      icon: FileText,
-      titleKey: "feat_catalogs_title",
-      descriptionKey: "feat_catalogs_desc",
-      benefitsKeys: [
-        "feat_catalogs_b1",
-        "feat_catalogs_b2",
-        "feat_catalogs_b3",
-        "feat_catalogs_b4",
-      ],
-      color: "from-emerald-500 to-teal-500",
-    },
-    {
-      category: "ordering",
-      icon: DollarSign,
-      titleKey: "feat_dynamic_pricing_title",
-      descriptionKey: "feat_dynamic_pricing_desc",
-      benefitsKeys: [
-        "feat_dynamic_pricing_b1",
-        "feat_dynamic_pricing_b2",
-        "feat_dynamic_pricing_b3",
-        "feat_dynamic_pricing_b4",
-      ],
-      color: "from-teal-500 to-green-500",
-    },
-    {
-      category: "ordering",
-      icon: Clock,
-      titleKey: "feat_approval_title",
-      descriptionKey: "feat_approval_desc",
-      benefitsKeys: [
-        "feat_approval_b1",
-        "feat_approval_b2",
-        "feat_approval_b3",
-        "feat_approval_b4",
-      ],
-      color: "from-green-600 to-emerald-600",
-    },
-    {
-      category: "distribution",
-      icon: Layers,
-      titleKey: "feat_multi_level_dist_title",
-      descriptionKey: "feat_multi_level_dist_desc",
-      benefitsKeys: [
-        "feat_multi_level_dist_b1",
-        "feat_multi_level_dist_b2",
-        "feat_multi_level_dist_b3",
-        "feat_multi_level_dist_b4",
-      ],
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      category: "distribution",
-      icon: Package,
-      titleKey: "feat_inventory_title",
-      descriptionKey: "feat_inventory_desc",
-      benefitsKeys: [
-        "feat_inventory_b1",
-        "feat_inventory_b2",
-        "feat_inventory_b3",
-        "feat_inventory_b4",
-      ],
-      color: "from-emerald-500 to-teal-500",
-    },
-    {
-      category: "distribution",
-      icon: MapPin,
-      titleKey: "feat_territory_title",
-      descriptionKey: "feat_territory_desc",
-      benefitsKeys: [
-        "feat_territory_b1",
-        "feat_territory_b2",
-        "feat_territory_b3",
-        "feat_territory_b4",
-      ],
-      color: "from-teal-500 to-green-500",
-    },
-    {
-      category: "distribution",
-      icon: RefreshCw,
-      titleKey: "feat_fulfillment_title",
-      descriptionKey: "feat_fulfillment_desc",
-      benefitsKeys: [
-        "feat_fulfillment_b1",
-        "feat_fulfillment_b2",
-        "feat_fulfillment_b3",
-        "feat_fulfillment_b4",
-      ],
-      color: "from-green-600 to-emerald-600",
-    },
-    {
-      category: "analytics",
-      icon: BarChart3,
-      titleKey: "feat_dashboards_title",
-      descriptionKey: "feat_dashboards_desc",
-      benefitsKeys: [
-        "feat_dashboards_b1",
-        "feat_dashboards_b2",
-        "feat_dashboards_b3",
-        "feat_dashboards_b4",
-      ],
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      category: "analytics",
-      icon: TrendingUp,
-      titleKey: "feat_sales_analytics_title",
-      descriptionKey: "feat_sales_analytics_desc",
-      benefitsKeys: [
-        "feat_sales_analytics_b1",
-        "feat_sales_analytics_b2",
-        "feat_sales_analytics_b3",
-        "feat_sales_analytics_b4",
-      ],
-      color: "from-emerald-500 to-teal-500",
-    },
-    {
-      category: "analytics",
-      icon: Eye,
-      titleKey: "feat_bi_title",
-      descriptionKey: "feat_bi_desc",
-      benefitsKeys: ["feat_bi_b1", "feat_bi_b2", "feat_bi_b3", "feat_bi_b4"],
-      color: "from-teal-500 to-green-500",
-    },
-    {
-      category: "analytics",
-      icon: Database,
-      titleKey: "feat_data_export_title",
-      descriptionKey: "feat_data_export_desc",
-      benefitsKeys: [
-        "feat_data_export_b1",
-        "feat_data_export_b2",
-        "feat_data_export_b3",
-        "feat_data_export_b4",
-      ],
-      color: "from-green-600 to-emerald-600",
-    },
-    {
-      category: "management",
-      icon: Users,
-      titleKey: "feat_partner_mgmt_title",
-      descriptionKey: "feat_partner_mgmt_desc",
-      benefitsKeys: [
-        "feat_partner_mgmt_b1",
-        "feat_partner_mgmt_b2",
-        "feat_partner_mgmt_b3",
-        "feat_partner_mgmt_b4",
-      ],
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      category: "management",
-      icon: Lock,
-      titleKey: "feat_rbac_title",
-      descriptionKey: "feat_rbac_desc",
-      benefitsKeys: [
-        "feat_rbac_b1",
-        "feat_rbac_b2",
-        "feat_rbac_b3",
-        "feat_rbac_b4",
-      ],
-      color: "from-emerald-500 to-teal-500",
-    },
-    {
-      category: "management",
-      icon: Bell,
-      titleKey: "feat_notifications_title",
-      descriptionKey: "feat_notifications_desc",
-      benefitsKeys: [
-        "feat_notifications_b1",
-        "feat_notifications_b2",
-        "feat_notifications_b3",
-        "feat_notifications_b4",
-      ],
-      color: "from-teal-500 to-green-500",
-    },
-    {
-      category: "management",
-      icon: Settings,
-      titleKey: "feat_customization_title",
-      descriptionKey: "feat_customization_desc",
-      benefitsKeys: [
-        "feat_customization_b1",
-        "feat_customization_b2",
-        "feat_customization_b3",
-        "feat_customization_b4",
-      ],
-      color: "from-green-600 to-emerald-600",
-    },
-    {
-      category: "ordering",
       icon: Smartphone,
-      titleKey: "feat_mobile_title",
-      descriptionKey: "feat_mobile_desc",
-      benefitsKeys: [
-        "feat_mobile_b1",
-        "feat_mobile_b2",
-        "feat_mobile_b3",
-        "feat_mobile_b4",
-      ],
-      color: "from-green-500 to-emerald-500",
+      title: "Zero IT Infrastructure Cost",
+      description:
+        "Sell your products on mobile without expensive hardware or complex systems",
+      image:
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80",
     },
     {
-      category: "management",
-      icon: Cloud,
-      titleKey: "feat_cloud_title",
-      descriptionKey: "feat_cloud_desc",
-      benefitsKeys: [
-        "feat_cloud_b1",
-        "feat_cloud_b2",
-        "feat_cloud_b3",
-        "feat_cloud_b4",
-      ],
-      color: "from-emerald-500 to-teal-500",
-    },
-    {
-      category: "management",
-      icon: Shield,
-      titleKey: "feat_security_title",
-      descriptionKey: "feat_security_desc",
-      benefitsKeys: [
-        "feat_security_b1",
-        "feat_security_b2",
-        "feat_security_b3",
-        "feat_security_b4",
-      ],
-      color: "from-teal-500 to-green-500",
-    },
-    {
-      category: "analytics",
       icon: Zap,
-      titleKey: "feat_realtime_title",
-      descriptionKey: "feat_realtime_desc",
-      benefitsKeys: [
-        "feat_realtime_b1",
-        "feat_realtime_b2",
-        "feat_realtime_b3",
-        "feat_realtime_b4",
-      ],
-      color: "from-green-600 to-emerald-600",
+      title: "Quick Setup",
+      description:
+        "Get your business or franchises up and running in minutes, not days",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    },
+    {
+      icon: ShoppingCart,
+      title: "Easy B2B & B2C Ordering",
+      description:
+        "Seamless ordering experience for both business and customer transactions",
+      image:
+        "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+    },
+    {
+      icon: Mic,
+      title: "Voice Ordering",
+      description: "Place orders without typing - just speak and order",
+      image:
+        "https://images.unsplash.com/photo-1589254065909-b7086229d08c?w=800&q=80",
+    },
+    {
+      icon: Globe,
+      title: "All Languages Supported",
+      description:
+        "Serve customers globally with comprehensive language support",
+      image:
+        "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&q=80",
+    },
+    {
+      icon: Receipt,
+      title: "Tax Software Integration",
+      description:
+        "Seamlessly integrate with your existing tax and accounting systems",
+      image:
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    },
+    {
+      icon: MapPin,
+      title: "Salesman Tracking",
+      description:
+        "Real-time location tracking and comprehensive reporting for your sales team",
+      image:
+        "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80",
+    },
+    {
+      icon: Megaphone,
+      title: "Promotions & Announcements",
+      description:
+        "Instantly notify customers about new products and special offers",
+      image:
+        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+    },
+    {
+      icon: Package,
+      title: "Stock Management",
+      description: "Efficient inventory tracking and management in real-time",
+      image:
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
     },
   ];
 
-  const filteredFeatures =
-    activeCategory === "all"
-      ? features
-      : features.filter((f) => f.category === activeCategory);
+  useEffect(() => {
+    if (!isAutoPlaying) return;
 
-  const highlights = [
-    { icon: CheckCircle, textKey: "features_highlight_no_infra" },
-    { icon: Zap, textKey: "features_highlight_deploy" },
-    { icon: Shield, textKey: "features_highlight_security" },
-    { icon: RefreshCw, textKey: "features_highlight_updates" },
-  ];
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % features.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, features.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % features.length);
+    setIsAutoPlaying(false);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
+    setIsAutoPlaying(false);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+  };
+
+  const IconComponent = features[currentSlide].icon;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-green-50 to-emerald-50 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50 flex items-center justify-center p-4">
+      <div className="max-w-6xl w-full">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
-              {t("features_label_powerful")}
-            </span>
-          </div>
-          <h1 className="text-5xl font-bold text-slate-900 mb-6">
-            {t("features_heading_prefix")}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
-              {t("features_heading_highlight")}
-            </span>
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent mb-4">
+            Wrio Features & Benefits
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            {t("features_subheading")}
+          <p className="text-xl text-green-700">
+            Transform your business with powerful, mobile-first solutions
           </p>
         </div>
 
-        {/* Quick Highlights */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-          {highlights.map((highlight, idx) => {
-            const Icon = highlight.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300"
-              >
-                <Icon className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                <p className="text-sm font-semibold text-slate-700">
-                  {t(highlight.textKey)}
-                </p>
+        {/* Carousel Container */}
+        <div className="relative bg-white rounded-3xl shadow-2xl border-2 border-green-100 p-8 md:p-12">
+          {/* Main Feature Display */}
+          <div className="relative overflow-hidden">
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center transform transition-all duration-500 hover:scale-110 shadow-lg">
+                <IconComponent className="w-12 h-12 text-white" />
               </div>
-            );
-          })}
+            </div>
+
+            <div className="text-center min-h-[200px] flex flex-col justify-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6 transition-all duration-500">
+                {features[currentSlide].title}
+              </h2>
+              <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto transition-all duration-500">
+                {features[currentSlide].description}
+              </p>
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Dot Indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {features.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  currentSlide === index
+                    ? "w-12 h-3 bg-green-600"
+                    : "w-3 h-3 bg-green-200 hover:bg-green-400"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Slide Counter */}
+          <div className="text-center mt-6">
+            <span className="text-green-600 text-sm font-medium">
+              {currentSlide + 1} / {features.length}
+            </span>
+          </div>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => {
-            const Icon = category.icon;
+        {/* Feature Grid Preview */}
+        <div className="mt-12 grid grid-cols-3 md:grid-cols-9 gap-4">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
             return (
               <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg scale-105"
-                    : "bg-white text-slate-700 hover:bg-green-50 shadow hover:shadow-lg"
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`p-4 rounded-xl transition-all duration-300 border-2 ${
+                  currentSlide === index
+                    ? "bg-green-500 border-green-600 scale-110 shadow-lg"
+                    : "bg-white border-green-100 hover:bg-green-50 hover:border-green-300"
                 }`}
+                aria-label={feature.title}
               >
-                <Icon className="w-5 h-5" />
-                {t(category.nameKey)}
+                <Icon
+                  className={`w-6 h-6 mx-auto ${
+                    currentSlide === index ? "text-white" : "text-green-600"
+                  }`}
+                />
               </button>
             );
           })}
         </div>
-
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {filteredFeatures.map((feature, idx) => {
-            const Icon = feature.icon;
-            const isHovered = hoveredFeature === idx;
-
-            return (
-              <div
-                key={idx}
-                onMouseEnter={() => setHoveredFeature(idx)}
-                onMouseLeave={() => setHoveredFeature(null)}
-                className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer ${
-                  isHovered ? "scale-105" : ""
-                }`}
-              >
-                <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4`}
-                >
-                  <Icon className="w-7 h-7 text-white" />
-                </div>
-
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  {t(feature.titleKey)}
-                </h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
-                  {t(feature.descriptionKey)}
-                </p>
-
-                <div className="space-y-2">
-                  {feature.benefitsKeys.map((bk, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex-shrink-0"></div>
-                      <span className="text-sm text-slate-700">{t(bk)}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-3xl p-12 text-white text-center">
-          <h2 className="text-3xl font-bold mb-4">{t("features_cta_title")}</h2>
-          <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-            {t("features_cta_sub")}
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <button className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              {t("features_cta_primary")}
-            </button>
-            <button className="bg-green-500/20 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold border-2 border-white/30 hover:bg-green-500/30 transition-all duration-300 hover:-translate-y-1">
-              {t("features_cta_secondary")}
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
-}
+};
+
+export default WrioCarousel;

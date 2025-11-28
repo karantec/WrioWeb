@@ -145,7 +145,13 @@ const WrioNavbar = () => {
               to="/"
               className="px-4 py-2 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 text-sm font-medium"
             >
-              {t("home")}
+              {t("Home")}
+            </Link>
+            <Link
+              to="/feature"
+              className="px-4 py-2 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 text-sm font-medium"
+            >
+              {t("Feature")}
             </Link>
 
             <Link
